@@ -1,7 +1,7 @@
 
 function escapeHtml(value) {
   return value.replace(/[&<>"']/g, ch => ({
-    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;'
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
   }[ch]));
 }
 
@@ -70,12 +70,12 @@ async function initSlides() {
   `).join('');
 
   dotsEl.innerHTML = state.slides.map((_, i) =>
-    `<button aria-label="Bild ${i+1}" class="${i===0?'active':''}" data-index="${i}"></button>`
+    `<button aria-label="Bild ${i + 1}" class="${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
   ).join('');
 
   const update = () => {
     slidesEl.style.transform = `translateX(-${state.slideIndex * 100}%)`;
-    dotsEl.querySelectorAll('button').forEach((b,i) => b.classList.toggle('active', i === state.slideIndex));
+    dotsEl.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === state.slideIndex));
   };
 
   document.querySelector('.next').addEventListener('click', () => {
@@ -89,7 +89,7 @@ async function initSlides() {
   });
 
   let startX = null;
-  slidesEl.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive:true});
+  slidesEl.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
   slidesEl.addEventListener('touchend', e => {
     if (startX === null) return;
     const dx = e.changedTouches[0].clientX - startX;
@@ -144,8 +144,19 @@ async function initArticles() {
     }
   });
 
-  document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  const articleCloseButton = document.querySelector(
+    '#articleDialog .dialog-close'
+  );
+
+  articleCloseButton.addEventListener('click', () => {
+    document.querySelector('#articleDialog').close();
+  });
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  });
 }
 
 async function initGroups() {

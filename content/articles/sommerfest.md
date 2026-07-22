@@ -1,15 +1,16 @@
 # Sommerfest der Kirchengemeinde
 
-**Sonntag, 2. August 2026 · ab 14:00 Uhr**
+**Sonntag, 2. August 2026 · ab 10:30 Uhr**
 
 Herzliche Einladung zu unserem Sommerfest rund um Kirche und Pfarrheim.
 
-Wir freuen uns auf einen entspannten Nachmittag mit Musik, Kaffee und Kuchen, Angeboten für Kinder und vielen Möglichkeiten zur Begegnung.
+Wir freuen uns auf einen entspannten Tag mit Gottesdienst, Musik, Kaffee und Kuchen, Angeboten für Kinder und vielen Möglichkeiten zur Begegnung.
 
 ## Programm
 
-- 14:00 Uhr – Beginn
+- 10:30 Uhr – Beginn
 - Kaffee und Kuchen
+- Steckerlfisch
 - Musik und Begegnung
 - Kinderprogramm
 

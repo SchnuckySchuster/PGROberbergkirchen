@@ -115,12 +115,16 @@
     <article id="legalDetail"></article>
   </dialog>
 
-  <dialog id="articleDialog" class="article-dialog">
-    <button type="button" class="dialog-close" aria-label="Schließen">×</button>
-    <article id="articleDetail"></article>
-  </dialog>
+  <section id="articleDetailSection" class="article-detail-section" hidden>
+    <div class="article-detail-toolbar">
+      <button id="articleDetailClose" type="button" class="article-detail-close" aria-label="Artikel schließen">
+        ← Zurück zu den Artikeln
+      </button>
+    </div>
+    <article id="articleDetail" class="article-detail"></article>
+  </section>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>

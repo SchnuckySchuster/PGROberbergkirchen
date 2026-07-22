@@ -110,53 +110,96 @@ async function initSlides() {
 
 async function initArticles() {
   const articles = await loadJson('content/articles.json');
+
   const container = document.querySelector('#articles');
-  container.innerHTML = articles.map((a, i) => `
-    <article class="article-card" tabindex="0" data-index="${i}">
-      <img src="${a.image}" alt="">
+  const detailSection = document.querySelector('#articleDetailSection');
+  const detail = document.querySelector('#articleDetail');
+  const closeButton = document.querySelector('#articleDetailClose');
+
+  container.innerHTML = articles.map((article, index) => `
+    <article class="article-card" tabindex="0" data-index="${index}">
+      <img src="${article.image}" alt="${article.title}">
       <div class="card-body">
-        <div class="meta">${a.date || ''}</div>
-        <h3>${a.title}</h3>
-        <p>${a.summary || ''}</p>
+        <div class="meta">${article.date || ''}</div>
+        <h3>${article.title}</h3>
+        <p>${article.summary || ''}</p>
       </div>
     </article>
   `).join('');
 
-  const dialog = document.querySelector('#articleDialog');
-  const detail = document.querySelector('#articleDetail');
-
   async function openArticle(index) {
-    const a = articles[index];
-    const res = await fetch(a.file);
-    if (!res.ok) return;
-    const md = await res.text();
-    detail.innerHTML = renderMarkdown(md);
-    dialog.showModal();
+    const article = articles[index];
+
+    const response = await fetch(article.file);
+
+    if (!response.ok) {
+      detail.innerHTML = `
+        <p>Der Artikel konnte nicht geladen werden.</p>
+      `;
+
+      detailSection.hidden = false;
+      detailSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      return;
+    }
+
+    const markdown = await response.text();
+
+    detail.innerHTML = `
+      <img
+        class="article-detail-image"
+        src="${article.image}"
+        alt="${article.title}"
+      >
+
+      ${renderMarkdown(markdown)}
+    `;
+
+    detailSection.hidden = false;
+
+    detailSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
 
-  container.addEventListener('click', e => {
-    const card = e.target.closest('.article-card');
-    if (card) openArticle(card.dataset.index);
+  function closeArticle() {
+    detailSection.hidden = true;
+    detail.innerHTML = '';
+
+    document.querySelector('#aktuelles').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+  container.addEventListener('click', (event) => {
+    const card = event.target.closest('.article-card');
+
+    if (!card) {
+      return;
+    }
+
+    openArticle(Number(card.dataset.index));
   });
-  container.addEventListener('keydown', e => {
-    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('article-card')) {
-      openArticle(e.target.dataset.index);
+
+  container.addEventListener('keydown', (event) => {
+    const card = event.target.closest('.article-card');
+
+    if (!card) {
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openArticle(Number(card.dataset.index));
     }
   });
 
-  const articleCloseButton = document.querySelector(
-    '#articleDialog .dialog-close'
-  );
-
-  articleCloseButton.addEventListener('click', () => {
-    document.querySelector('#articleDialog').close();
-  });
-
-  dialog.addEventListener('click', (event) => {
-    if (event.target === dialog) {
-      dialog.close();
-    }
-  });
+  closeButton.addEventListener('click', closeArticle);
 }
 
 async function initGroups() {

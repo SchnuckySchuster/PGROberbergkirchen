@@ -21,7 +21,7 @@ Dann im Browser:
 
 ## Kirchenzeichnung ersetzen
 Datei ersetzen:
-`assets/images/kirche.svg`
+`assets/images/kirche.jpeg`
 
 Am einfachsten eine PNG-, JPG-, WebP- oder SVG-Datei verwenden und in `index.html`
 den Dateinamen an zwei Stellen ändern, falls die Endung abweicht.
@@ -78,3 +78,13 @@ Dort können Pfarrgemeinderat, Ministranten, Chor usw. ohne HTML-Kenntnisse gepf
 ## Hinweis
 Diese Version ist absichtlich ohne Backend/CMS gebaut. Die Pflege erfolgt über wenige JSON- und Markdown-Dateien.
 Später kann problemlos ein Git-basiertes CMS ergänzt werden, ohne das Design neu zu bauen.
+
+## Rechtliches
+
+Enthalten sind jetzt:
+- sichtbarer Hinweis auf den privaten Charakter der Seite,
+- prominenter Link zur offiziellen Pfarrseite,
+- Impressum,
+- Datenschutzinformation.
+
+Externe Google-Fonts und das externe Markdown-CDN wurden entfernt.

@@ -1,20 +1,19 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#dff7f3" />
   <meta name="description" content="Kirchengemeinde – Veranstaltungen, Gruppen und Neuigkeiten" />
   <title>Unsere Kirchengemeinde</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="#start" aria-label="Zur Startseite">
-      <img src="assets/images/kirche.svg" alt="Zeichnung unserer Kirche" class="brand-mark">
+      <img src="assets/images/kirche.jpeg" alt="Zeichnung unserer Kirche" class="brand-mark">
       <span>
         <strong>Unsere Kirchengemeinde</strong>
         <small>Gemeinsam glauben. Gemeinsam leben.</small>
@@ -29,6 +28,17 @@
     </nav>
   </header>
 
+  <aside class="private-notice" aria-label="Hinweis zum privaten Charakter dieser Seite">
+    <div>
+      <strong>Private Informationsseite</strong>
+      <span>Dies ist kein offizieller Internetauftritt der Katholischen Pfarrgemeinde Oberbergkirchen.</span>
+    </div>
+    <a class="official-link" href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843" target="_blank"
+      rel="noopener noreferrer">
+      Zur offiziellen Seite der Pfarrei
+    </a>
+  </aside>
+
   <main>
     <section id="start" class="hero">
       <div class="hero-copy">
@@ -39,7 +49,7 @@
       </div>
 
       <div class="church-illustration-card">
-        <img src="assets/images/kirche.svg" alt="Zeichnung unserer Kirche">
+        <img src="assets/images/kirche.jpeg" alt="Zeichnung unserer Kirche">
       </div>
     </section>
 
@@ -79,28 +89,38 @@
       <div>
         <span class="eyebrow">Kontakt</span>
         <h2>Wir freuen uns auf Sie.</h2>
-        <p>Hier können später Adresse, Pfarrbüro, Telefonnummer und E-Mail eingetragen werden.</p>
+        <p>Hinweise, Ergänzungen oder Korrekturen zu veröffentlichten Informationen können direkt an den privaten
+          Betreiber dieser Seite gesendet werden.</p>
       </div>
       <div class="contact-card">
-        <strong>Pfarrbüro</strong>
-        <span>Musterstraße 1</span>
-        <span>12345 Musterort</span>
-        <a href="mailto:pfarrbuero@example.de">pfarrbuero@example.de</a>
+        <strong>Privater Betreiber dieser Informationsseite</strong>
+        <span>Gerhard-Walter Schuster</span>
+        <span>Aubenham 6</span>
+        <span>84564 Oberbergkirchen</span>
+        <a href="mailto:acker-teig8s@icloud.com">acker-teig8s@icloud.com</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>© <span id="year"></span> Unsere Kirchengemeinde</span>
-    <span>Impressum · Datenschutz</span>
+    <span>© <span id="year"></span> Private Informationsseite Oberbergkirchen</span>
+    <span class="footer-links">
+      <button type="button" data-legal="impressum">Impressum</button>
+      <span>·</span>
+      <button type="button" data-legal="datenschutz">Datenschutz</button>
+    </span>
   </footer>
+
+  <dialog id="legalDialog" class="article-dialog legal-dialog">
+    <button class="dialog-close legal-close" aria-label="Schließen">×</button>
+    <article id="legalDetail"></article>
+  </dialog>
 
   <dialog id="articleDialog" class="article-dialog">
     <button class="dialog-close" aria-label="Schließen">×</button>
     <article id="articleDetail"></article>
   </dialog>
-
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,44 @@
 
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, ch => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;'
+  }[ch]));
+}
+
+function renderMarkdown(md) {
+  const lines = md.replace(/\r/g, '').split('\n');
+  let html = '';
+  let inList = false;
+
+  const inline = (text) => escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+
+    if (/^\s*-\s+/.test(line)) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${inline(line.replace(/^\s*-\s+/, ''))}</li>`;
+      continue;
+    }
+    if (inList) { html += '</ul>'; inList = false; }
+
+    if (!line.trim()) continue;
+    if (line.startsWith('### ')) html += `<h3>${inline(line.slice(4))}</h3>`;
+    else if (line.startsWith('## ')) html += `<h2>${inline(line.slice(3))}</h2>`;
+    else if (line.startsWith('# ')) html += `<h1>${inline(line.slice(2))}</h1>`;
+    else html += `<p>${inline(line)}</p>`;
+  }
+
+  if (inList) html += '</ul>';
+  return html;
+}
+
+
 const state = { slideIndex: 0, slides: [] };
 
 async function loadJson(path) {
@@ -90,7 +130,7 @@ async function initArticles() {
     const res = await fetch(a.file);
     if (!res.ok) return;
     const md = await res.text();
-    detail.innerHTML = marked.parse(md);
+    detail.innerHTML = renderMarkdown(md);
     dialog.showModal();
   }
 
@@ -122,3 +162,68 @@ async function initGroups() {
 document.querySelector('#year').textContent = new Date().getFullYear();
 initMenu();
 Promise.all([initSlides(), initArticles(), initGroups()]).catch(err => console.error(err));
+
+
+const legalTexts = {
+  impressum: `
+    <h1>Impressum</h1>
+    <p><strong>Angaben zum Anbieter dieser privaten Informationsseite</strong></p>
+    <p>
+      Gerhard-Walter Schuster<br>
+      Aubenham 6<br>
+      84564 Oberbergkirchen
+    </p>
+    <p>E-Mail: <a href="mailto:acker-teig8s@icloud.com">acker-teig8s@icloud.com</a></p>
+    <p>
+      Diese Website ist eine private Informationsseite und kein offizieller Internetauftritt
+      der Katholischen Pfarrgemeinde Oberbergkirchen, des Pfarrverbands Schönberg
+      oder des Erzbistums München und Freising.
+    </p>
+    <p>
+      Offizielle Informationen finden Sie auf der
+      <a href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843"
+         target="_blank" rel="noopener noreferrer">offiziellen Seite der Pfarrei</a>.
+    </p>
+  `,
+  datenschutz: `
+    <h1>Datenschutz</h1>
+    <p>
+      Diese Website wird als private Informationsseite betrieben.
+      Beim bloßen Aufruf dieser Seite werden von dieser Website selbst keine Cookies gesetzt,
+      keine Analyse- oder Trackingdienste eingesetzt und keine Formulare betrieben.
+    </p>
+    <h2>Hosting über GitHub Pages</h2>
+    <p>
+      Die Website wird über GitHub Pages bereitgestellt. Beim Aufruf können technisch
+      erforderliche Verbindungsdaten wie IP-Adresse, Zeitpunkt des Zugriffs und aufgerufene
+      Ressource durch den Hostinganbieter verarbeitet bzw. protokolliert werden.
+    </p>
+    <h2>Externe Links</h2>
+    <p>
+      Beim Anklicken externer Links verlassen Sie diese Website.
+      Für die Datenverarbeitung auf den verlinkten Seiten sind die jeweiligen Anbieter verantwortlich.
+    </p>
+    <h2>Kontakt</h2>
+    <p>
+      Bei einer Kontaktaufnahme per E-Mail werden die übermittelten Angaben nur zur Bearbeitung
+      der jeweiligen Anfrage verwendet.
+    </p>
+    <p>
+      Kontakt: <a href="mailto:acker-teig8s@icloud.com">acker-teig8s@icloud.com</a>
+    </p>
+  `
+};
+
+const legalDialog = document.querySelector('#legalDialog');
+const legalDetail = document.querySelector('#legalDetail');
+
+document.querySelectorAll('[data-legal]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    legalDetail.innerHTML = legalTexts[btn.dataset.legal];
+    legalDialog.showModal();
+  });
+});
+document.querySelector('.legal-close').addEventListener('click', () => legalDialog.close());
+legalDialog.addEventListener('click', e => {
+  if (e.target === legalDialog) legalDialog.close();
+});

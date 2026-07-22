@@ -296,6 +296,8 @@ h2 {
 .article-card {
   cursor: pointer;
   transition: transform .2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .article-card:hover {
@@ -588,7 +590,7 @@ footer {
   margin: 0 clamp(20px, 7vw, 100px) clamp(70px, 9vw, 120px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: rgba(255,255,255,.92);
+  background: rgba(255, 255, 255, .92);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -604,7 +606,7 @@ footer {
   display: flex;
   justify-content: flex-start;
   padding: 14px 18px;
-  background: rgba(247,252,251,.96);
+  background: rgba(247, 252, 251, .96);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }

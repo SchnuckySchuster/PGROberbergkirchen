@@ -176,12 +176,14 @@ async function initArticles() {
     });
   }
 
-  container.addEventListener('click', (event) => {
+  container.addEventListener('pointerup', (event) => {
     const card = event.target.closest('.article-card');
 
     if (!card) {
       return;
     }
+
+    event.preventDefault();
 
     openArticle(Number(card.dataset.index));
   });

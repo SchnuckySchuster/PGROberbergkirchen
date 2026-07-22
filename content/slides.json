@@ -1,0 +1,17 @@
+[
+  {
+    "image": "assets/images/slide-1.svg",
+    "caption": "Gemeinschaft erleben",
+    "alt": "Platzhalterbild für Gemeindeleben"
+  },
+  {
+    "image": "assets/images/slide-2.svg",
+    "caption": "Glaube verbindet",
+    "alt": "Platzhalterbild für Kirche"
+  },
+  {
+    "image": "assets/images/slide-3.svg",
+    "caption": "Veranstaltungen für alle Generationen",
+    "alt": "Platzhalterbild für Veranstaltung"
+  }
+]

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+<rect width="640" height="480" rx="40" fill="#eef9f7"/>
+<g fill="none" stroke="#2f7e85" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M120 360h400"/>
+<path d="M190 360V230l130-90 130 90v130"/>
+<path d="M280 360V245h80v115"/>
+<path d="M240 205V105h70v55"/>
+<path d="M255 105V65h40v40"/>
+<path d="M275 65V35"/>
+<path d="M262 48h26"/>
+<path d="M410 360V270h70v90"/>
+<path d="M430 270v-65h30v65"/>
+<circle cx="320" cy="215" r="18"/>
+</g>
+<text x="320" y="430" font-family="Arial, sans-serif" font-size="22" fill="#5b777b" text-anchor="middle">
+Platzhalter – hier eure Kirchenzeichnung einsetzen
+</text>
+</svg>

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Pfarrgemeinderat",
+    "icon": "◎",
+    "description": "Der Pfarrgemeinderat gestaltet das Gemeindeleben mit, setzt Schwerpunkte und bringt Menschen und Ideen zusammen."
+  },
+  {
+    "name": "Ministranten",
+    "icon": "✦",
+    "description": "Unsere Ministrantinnen und Ministranten gestalten Gottesdienste mit und erleben Gemeinschaft bei Aktionen, Ausflügen und Treffen."
+  },
+  {
+    "name": "Kirchenchor",
+    "icon": "♫",
+    "description": "Gemeinsam singen, Gottesdienste musikalisch gestalten und Freude an Musik teilen."
+  }
+]

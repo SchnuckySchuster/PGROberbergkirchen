@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#cfeaf8"/><stop offset="1" stop-color="#d9f0cb"/></linearGradient></defs>
-<rect width="1200" height="700" fill="url(#g)"/>
-<circle cx="950" cy="170" r="180" fill="rgba(255,255,255,.25)"/>
-<circle cx="230" cy="560" r="260" fill="rgba(255,255,255,.18)"/>
-<text x="90" y="310" font-family="Arial,sans-serif" font-size="72" font-weight="700" fill="#18343a">Gemeinsam feiern</text>
-<text x="94" y="380" font-family="Arial,sans-serif" font-size="34" fill="#355c61">Veranstaltungen stehen sichtbar im Mittelpunkt</text>
-</svg>

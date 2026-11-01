@@ -52,6 +52,7 @@ for (const file of await readdir(imageRoot, { withFileTypes: true })) {
     console.warn(`Freies Bild ohne gültiges Datum übersprungen: ${file.name}`);
     continue;
   }
+  if (match.groups.title.toLowerCase() === 'plakat') continue;
   entries.push({
     title: readableTitle(match.groups.title),
     date: match.groups.date,

@@ -150,6 +150,59 @@ function formatDate(value) {
   }).format(new Date(`${value}T12:00:00+01:00`));
 }
 
+const eventRail = document.querySelector('#eventRail');
+const eventDialog = document.querySelector('#eventDialog');
+const eventDialogImage = document.querySelector('#eventDialogImage');
+
+async function loadEvents() {
+  const response = await fetch('redaktioneller_inhalt/veranstaltungen.json');
+  if (!response.ok) throw new Error('Der Veranstaltungskatalog konnte nicht geladen werden.');
+  const upcomingEvents = (await response.json()).filter(event => event.date >= berlinToday());
+
+  if (!upcomingEvents.length) {
+    eventRail.innerHTML = '<p class="event-empty">Im Moment sind keine kommenden Veranstaltungen eingetragen.</p>';
+    return;
+  }
+
+  const events = await Promise.all(upcomingEvents.map(async event => {
+    if (!event.information) return { ...event, preview: '' };
+    const informationResponse = await fetch(event.information);
+    const markdown = informationResponse.ok ? await informationResponse.text() : '';
+    return { ...event, preview: articlePreview(markdown) };
+  }));
+
+  eventRail.innerHTML = events.map(event => `
+    <article class="event-card">
+      ${event.poster ? `
+        <button class="event-poster" type="button" data-event-poster="${escapeHtml(event.poster)}" data-event-title="${escapeHtml(event.title)}" aria-label="Plakat zu ${escapeHtml(event.title)} vergrößern">
+          <img src="${escapeHtml(event.poster)}" alt="Plakat: ${escapeHtml(event.title)}" loading="lazy">
+        </button>
+      ` : '<div class="event-card-color" aria-hidden="true"></div>'}
+      <div class="event-card-body">
+        <time datetime="${escapeHtml(event.date)}">${escapeHtml(formatDate(event.date))}</time>
+        <h3>${escapeHtml(event.title)}</h3>
+        ${event.preview ? `<p>${escapeHtml(event.preview)}</p>` : ''}
+        ${event.poster ? '<span>Plakat öffnen <span aria-hidden="true">↗</span></span>' : ''}
+      </div>
+    </article>
+  `).join('');
+}
+
+eventRail.addEventListener('click', event => {
+  const trigger = event.target.closest('[data-event-poster]');
+  if (!trigger) return;
+  eventDialogImage.src = trigger.dataset.eventPoster;
+  eventDialogImage.alt = `Plakat: ${trigger.dataset.eventTitle}`;
+  eventDialog.showModal();
+});
+document.querySelector('.event-dialog-close').addEventListener('click', () => eventDialog.close());
+eventDialog.addEventListener('click', event => { if (event.target === eventDialog) eventDialog.close(); });
+
+loadEvents().catch(error => {
+  console.error(error);
+  eventRail.innerHTML = '<p class="event-empty">Die kommenden Termine konnten leider nicht geladen werden.</p>';
+});
+
 function resolveArticleAsset(article, source) {
   if (/^(?:https?:|data:|\/)/i.test(source)) return source;
   const base = new URL(article.file, window.location.href);

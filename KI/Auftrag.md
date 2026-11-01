@@ -22,8 +22,10 @@ Der laufende Pflegeaufwand soll möglichst gering sein. Neue Inhalte sollen übe
 ## Seitenkopf
 
 - Das Hauptmenü steht auf der linken Seite.
-- Das Logo steht auf der rechten Seite.
-- Auf kleinen Bildschirmen steht der Menüknopf links und das Logo rechts.
+- Das Logo steht ganz rechts am Rand des Seitenkopfs.
+- Auf kleinen Bildschirmen steht der Menüknopf links und das Logo ganz rechts.
+- Das ausgeklappte mobile Menü verwendet die warme Hintergrundfarbe der Seite.
+- Die Diashow benötigt keinen eigenen Menüeintrag „Einblicke“.
 
 ## Logo
 
@@ -118,6 +120,8 @@ Der Katalog enthält:
 
 Der Katalog wird nicht von Hand gepflegt. Bei GitHub Pages soll seine Erzeugung Teil des Veröffentlichungsprozesses sein.
 
+Für die einfache manuelle Aktualisierung liegt `aktualisieren.command` im Projektwurzelverzeichnis. Die Datei startet per Doppelklick auf dem Mac die Erzeugung aller Kataloge.
+
 ## Zukünftige Veranstaltungen
 
 Eine Veranstaltung gilt als zukünftig, wenn ihr Datum heute oder später liegt.
@@ -126,17 +130,19 @@ Zukünftige Veranstaltungen werden prominent beworben:
 
 - chronologisch nach Datum sortiert
 - früheste Veranstaltung zuerst
-- Darstellung mit `Plakat` als bevorzugtem Vorschaubild, falls vorhanden
-- alternativ Verwendung eines anderen vorhandenen Bildes
+- Im Terminbereich werden ausschließlich Dateien namens `Plakat` angezeigt.
+- Veranstaltungen ohne `Plakat` erscheinen nicht im Terminbereich; andere Bilder werden dort niemals als Ersatz verwendet.
 - Text aus einer optionalen Informationsdatei wie `information.md`
+- mehrere Termine werden horizontal nach rechts durchsuchbar dargestellt
+- ein Plakat kann zum Lesen in einer großen Ansicht geöffnet werden
 
-Für zukünftige Veranstaltungen soll sowohl eine bildliche Bewerbung in Form eines Plakats als auch eine textuelle Beschreibung möglich sein.
+Für zukünftige Veranstaltungen ist ein Plakat erforderlich. Eine optionale textuelle Beschreibung kann es ergänzen, ersetzt das Plakat aber nicht.
 
 ## Vergangene Veranstaltungen
 
 Nach Ablauf des Datums wechselt eine Veranstaltung automatisch in die Vergangenheit. Ihre normalen Bilder werden dann Teil des Diashow-Fundus.
 
-- `Plakat`-Bilder werden nach der Veranstaltung nicht in der Diashow gezeigt.
+- Dateien namens `Plakat` werden grundsätzlich niemals in der Diashow gezeigt.
 - Artikel werden unabhängig davon im zentralen Artikelordner gepflegt und dürfen auf Bilder aus einem Veranstaltungsordner verweisen.
 - Ohne einen passenden Artikel bleibt die vergangene Veranstaltung ausschließlich über ihre Bilder in der Diashow vertreten.
 

@@ -203,10 +203,25 @@ loadEvents().catch(error => {
   eventRail.innerHTML = '<p class="event-empty">Die kommenden Termine konnten leider nicht geladen werden.</p>';
 });
 
+let optimizationManifest = {};
+
+async function loadOptimizationManifest() {
+  const response = await fetch('redaktioneller_inhalt/bildoptimierung.json');
+  if (response.ok) optimizationManifest = await response.json();
+}
+
 function resolveArticleAsset(article, source) {
   if (/^(?:https?:|data:|\/)/i.test(source)) return source;
   const base = new URL(article.file, window.location.href);
-  return new URL(source, base).href;
+  const originalUrl = new URL(source, base);
+  const marker = 'redaktioneller_inhalt/';
+  const markerIndex = originalUrl.pathname.indexOf(marker);
+  if (markerIndex >= 0) {
+    const originalPath = decodeURIComponent(originalUrl.pathname.slice(markerIndex));
+    const optimizedPath = optimizationManifest[originalPath];
+    if (optimizedPath) return new URL(optimizedPath, document.baseURI).href;
+  }
+  return originalUrl.href;
 }
 
 function inlineMarkdown(text) {
@@ -367,7 +382,7 @@ window.addEventListener('popstate', () => {
   }
 });
 
-loadArticles().catch(error => {
+loadOptimizationManifest().then(loadArticles).catch(error => {
   console.error(error);
   articleRail.innerHTML = '<p class="loading-message">Die Artikel konnten leider nicht geladen werden.</p>';
 });

@@ -1,4 +1,4 @@
-import { readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -7,6 +7,8 @@ const editorialRoot = path.join(root, 'redaktioneller_inhalt');
 const eventRoot = path.join(editorialRoot, 'veranstaltungen');
 const imageRoot = path.join(editorialRoot, 'bilder');
 const outputFile = path.join(editorialRoot, 'slideshow.json');
+const optimizationManifest = JSON.parse(await readFile(
+  path.join(editorialRoot, 'bildoptimierung.json'), 'utf8'));
 const imagePattern = /\.(?:jpe?g|png|webp)$/i;
 const datedNamePattern = /^(?<title>.+?)(?:__|-)(?<date>\d{4}-\d{2}-\d{2})$/;
 
@@ -22,6 +24,10 @@ function webPath(...parts) {
   return parts.join('/');
 }
 
+function optimizedPath(originalPath) {
+  return optimizationManifest[originalPath] || originalPath;
+}
+
 const entries = [];
 
 for (const folder of await readdir(eventRoot, { withFileTypes: true })) {
@@ -35,11 +41,12 @@ for (const folder of await readdir(eventRoot, { withFileTypes: true })) {
   for (const file of files) {
     if (!file.isFile() || !imagePattern.test(file.name) || /^plakat(?:\.|-|_)/i.test(file.name)) continue;
     const title = readableTitle(path.parse(file.name).name);
+    const originalPath = webPath('redaktioneller_inhalt', 'veranstaltungen', folder.name, file.name);
     entries.push({
       title,
       date: folderMatch.groups.date,
       source: folder.name,
-      image: webPath('redaktioneller_inhalt', 'veranstaltungen', folder.name, file.name)
+      image: optimizedPath(originalPath)
     });
   }
 }
@@ -53,11 +60,12 @@ for (const file of await readdir(imageRoot, { withFileTypes: true })) {
     continue;
   }
   if (match.groups.title.toLowerCase() === 'plakat') continue;
+  const originalPath = webPath('redaktioneller_inhalt', 'bilder', file.name);
   entries.push({
     title: readableTitle(match.groups.title),
     date: match.groups.date,
     source: `frei:${file.name}`,
-    image: webPath('redaktioneller_inhalt', 'bilder', file.name)
+    image: optimizedPath(originalPath)
   });
 }
 

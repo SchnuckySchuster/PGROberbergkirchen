@@ -14,7 +14,7 @@ node --version
 
 Für die lokale Vorschau wird in den folgenden Beispielen Python 3 verwendet. Auf dem Mac ist es häufig bereits installiert.
 
-## Wichtigster Arbeitsablauf
+## Inhalte aktualisieren
 
 Nach dem Hinzufügen, Umbenennen oder Löschen von Veranstaltungen, Bildern oder Artikeln:
 
@@ -41,10 +41,31 @@ Das Skript aktualisiert automatisch:
 - `redaktioneller_inhalt/veranstaltungen.json`
 - `redaktioneller_inhalt/slideshow.json`
 - `redaktioneller_inhalt/artikel.json`
+- optimierte WebP-Kopien aller verwendeten Bilder
+- `redaktioneller_inhalt/bildoptimierung.json`
+
+Zusätzlich werden Ordnernamen, Datumsangaben, Plakate und in Artikeln eingebettete Bilder geprüft. Verständliche Hinweise und Fehler erscheinen direkt im Terminalfenster. Bei einem Fehler wird die Aktualisierung abgebrochen.
 
 Diese drei JSON-Dateien nicht von Hand bearbeiten.
 
 Das Skript muss nicht allein deshalb erneut laufen, weil ein Termin abgelaufen ist. Die Website vergleicht die gespeicherten Daten beim Öffnen selbst mit dem aktuellen Datum. Es muss nur nach einer Änderung an den Quelldateien ausgeführt werden.
+
+Am Ende fragt `aktualisieren.command`, ob die lokale Vorschau im Browser geöffnet werden soll. Falls nötig, wird dafür automatisch ein lokaler Webserver auf Port 8000 gestartet.
+
+## Website veröffentlichen
+
+Im Projektordner auf `veroeffentlichen.command` doppelklicken. Die Datei:
+
+1. optimiert die Bilder,
+2. erzeugt alle Kataloge,
+3. prüft die Inhalte,
+4. zeigt die gefundenen Git-Änderungen,
+5. fragt vor der Übertragung noch einmal nach,
+6. erstellt einen Git-Commit und überträgt ihn zu GitHub.
+
+Nach der Bestätigung werden alle Änderungen des Projekts gemeinsam veröffentlicht. Deshalb vor der Bestätigung kurz die angezeigte Dateiliste prüfen.
+
+GitHub Actions baut und veröffentlicht die Website nach der Übertragung automatisch.
 
 ## Veranstaltungen pflegen
 
@@ -180,25 +201,26 @@ http://localhost:8000
 
 Der Server wird im Terminal mit `Ctrl+C` beendet.
 
-## Auf GitHub Pages veröffentlichen
+Einfacher ist die Frage „Lokale Vorschau im Browser öffnen?“ am Ende von `aktualisieren.command` mit `j` zu beantworten.
 
-Vor jeder Veröffentlichung zuerst die Kataloge erzeugen:
+## GitHub Pages einmalig einrichten
 
-```bash
-./aktualisieren.command
-```
+Das Repository enthält unter `.github/workflows/pages.yml` die vollständige Veröffentlichungsautomatik.
 
-Danach alle geänderten Quelldateien und die neu erzeugten JSON-Kataloge gemeinsam in das GitHub-Repository übertragen.
+Einmalig auf GitHub:
 
-Für ein neues Repository:
+1. Repository öffnen.
+2. `Settings` → `Pages` aufrufen.
+3. Unter `Build and deployment` als Quelle `GitHub Actions` auswählen.
+4. Eine Übertragung auf den Branch `main` startet anschließend automatisch die Veröffentlichung.
 
-1. Repository auf GitHub anlegen und Projektdateien hochladen.
-2. `Settings` → `Pages` öffnen.
-3. Als Quelle `Deploy from a branch` wählen.
-4. Branch `main` und Ordner `/root` auswählen.
-5. Speichern.
+Für spätere Veröffentlichungen genügt der Doppelklick auf `veroeffentlichen.command`.
 
-Eine spätere GitHub-Automatisierung kann die Katalogerzeugung beim Veröffentlichen übernehmen. Derzeit muss `aktualisieren.command` nach inhaltlichen Änderungen ausgeführt werden.
+## Bildoptimierung
+
+Originalbilder bleiben unverändert erhalten. Beim Aktualisieren entstehen automatisch WebP-Kopien mit maximal 1600 × 1600 Pixeln und angepasster Dateigröße. Die veröffentlichte Website verwendet diese optimierten Dateien auch für Plakate und Artikelbilder.
+
+Die erzeugten WebP-Dateien liegen lokal unter `redaktioneller_inhalt/optimiert/`. Sie werden nicht in Git gespeichert, sondern lokal und bei GitHub jeweils neu erzeugt.
 
 ## Hinweise zu öffentlichen Bildern
 
@@ -212,6 +234,9 @@ Alle über GitHub Pages veröffentlichten Bilder sind grundsätzlich öffentlich
 - `redaktioneller_inhalt/` – alle redaktionell gepflegten Inhalte
 - `scripts/` – Erzeugung der JSON-Kataloge
 - `aktualisieren.command` – Aktualisierung aller Kataloge per Doppelklick
+- `veroeffentlichen.command` – prüfen, speichern und zu GitHub übertragen
+- `.github/workflows/pages.yml` – automatische GitHub-Pages-Veröffentlichung
+- `package.json` – benötigte Node.js-Komponenten und Befehle
 - `KI/Auftrag.md` – verbindlicher Projektauftrag
 
 Die Website verwendet keine externen Schriftarten, keine Analyse- oder Trackingdienste und kein externes Markdown-Skript.

@@ -4,7 +4,7 @@
 
 Bei schönem Sommerwetter kamen viele Besucherinnen und Besucher rund um Kirche und Pfarrheim zusammen. Nach dem gemeinsamen Gottesdienst blieb viel Zeit für Gespräche, Begegnungen und ein gemütliches Beisammensein.
 
-![Sommerfest rund um Kirche und Pfarrheim](../veranstaltungen/Sommerfest-2026-08-02/Sommerfest2026-08-02.jpeg)
+![Sommerfest rund um Kirche und Pfarrheim](../veranstaltungen/Sommerfest-2026-08-02/Plakat.jpeg)
 
 Für das leibliche Wohl war gesorgt, und auch die jüngeren Gäste fanden Gelegenheit zum Spielen und Entdecken. Musik und viele helfende Hände machten den Tag zu einem gelungenen Fest für die ganze Gemeinde.
 

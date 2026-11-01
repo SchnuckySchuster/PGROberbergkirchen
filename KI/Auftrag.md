@@ -122,6 +122,16 @@ Der Katalog wird nicht von Hand gepflegt. Bei GitHub Pages soll seine Erzeugung 
 
 Für die einfache manuelle Aktualisierung liegt `aktualisieren.command` im Projektwurzelverzeichnis. Die Datei startet per Doppelklick auf dem Mac die Erzeugung aller Kataloge.
 
+Die Aktualisierung umfasst außerdem:
+
+- automatische WebP-Bildoptimierung mit maximal 1600 × 1600 Pixeln
+- Prüfung der Namensmuster und Datumsangaben
+- Prüfung auf fehlende Plakate und fehlende Artikelbilder
+- verständliche Hinweise und Fehlermeldungen
+- optionale lokale Vorschau im Browser
+
+`veroeffentlichen.command` aktualisiert und prüft die Inhalte, zeigt die Git-Änderungen, fragt vor der Übertragung nach und überträgt anschließend einen Commit zu GitHub. GitHub Actions erstellt daraus automatisch das optimierte Veröffentlichungspaket und veröffentlicht es über GitHub Pages.
+
 ## Zukünftige Veranstaltungen
 
 Eine Veranstaltung gilt als zukünftig, wenn ihr Datum heute oder später liegt.
@@ -214,6 +224,7 @@ Da die Website öffentlich und statisch ausgeliefert wird, sind verwendete Bilde
 - Die Seite tritt eindeutig als Angebot des Pfarrgemeinderats Oberbergkirchen auf.
 - Sie bildet nicht das vollständige Angebot des Pfarrverbands nach.
 - Die offizielle Seite des Pfarrverbands wird prominent verlinkt.
+- Ein zusätzlicher Hinweisblock zur offiziellen Seite ist nicht erforderlich; die vorhandenen Links in Menü, Einleitung und Fußbereich genügen.
 - Die Gottesdienstordnung wird weder parallel gepflegt noch separat verlinkt.
 - Inhalte wie amtliche Informationen, Sakramente, Seelsorge und Pfarrbüro bleiben beim offiziellen Angebot.
 

@@ -1,10 +1,12 @@
-import { readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const eventRoot = path.join(root, 'redaktioneller_inhalt', 'veranstaltungen');
 const outputFile = path.join(root, 'redaktioneller_inhalt', 'veranstaltungen.json');
+const optimizationManifest = JSON.parse(await readFile(
+  path.join(root, 'redaktioneller_inhalt', 'bildoptimierung.json'), 'utf8'));
 const datedNamePattern = /^(?<title>.+?)(?:__|-)(?<date>\d{4}-\d{2}-\d{2})$/;
 
 function readableTitle(value) {
@@ -40,7 +42,8 @@ for (const folder of await readdir(eventRoot, { withFileTypes: true })) {
     title,
     date: match.groups.date,
     slug: `${slugify(match.groups.title)}-${match.groups.date}`,
-    poster: `redaktioneller_inhalt/veranstaltungen/${folder.name}/${poster}`,
+    poster: optimizationManifest[`redaktioneller_inhalt/veranstaltungen/${folder.name}/${poster}`]
+      || `redaktioneller_inhalt/veranstaltungen/${folder.name}/${poster}`,
     information: information
       ? `redaktioneller_inhalt/veranstaltungen/${folder.name}/${information}`
       : null

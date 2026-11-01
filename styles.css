@@ -71,7 +71,7 @@ button { font: inherit; }
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(16px);
 }
-.brand { flex: 0 1 360px; margin-left: auto; text-decoration: none; }
+.brand { display: flex; flex: 0 1 360px; justify-content: flex-end; margin-left: auto; text-decoration: none; }
 .brand img { width: min(360px, 50vw); max-height: 58px; object-fit: contain; object-position: right center; }
 .main-nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); }
 .main-nav a { color: var(--ink); font-size: .94rem; font-weight: 750; text-decoration: none; }
@@ -135,15 +135,12 @@ main { overflow: hidden; }
 
 .hero {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr);
-  align-items: center;
-  gap: clamp(44px, 7vw, 100px);
-  width: min(var(--content), calc(100% - 40px));
+  width: min(900px, calc(100% - 40px));
   min-height: 670px;
   margin: 0 auto;
   padding: clamp(74px, 10vw, 132px) 0;
 }
+.hero-content { width: 100%; }
 .hero::after {
   content: "";
   position: absolute;
@@ -192,15 +189,15 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
 .hero-logo {
   display: grid;
   place-items: center;
-  min-height: 390px;
+  min-height: 330px;
+  margin-top: 34px;
   padding: clamp(24px, 4vw, 54px);
   background: white;
   border: 1px solid rgba(7, 84, 166, .11);
   border-radius: 48% 52% 42% 58% / 48% 42% 58% 52%;
   box-shadow: var(--shadow);
-  transform: rotate(1.5deg);
 }
-.hero-logo img { width: 100%; transform: rotate(-1.5deg); }
+.hero-logo img { width: 100%; }
 
 .preview-section {
   display: grid;
@@ -504,7 +501,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
   .main-nav.open { display: flex; }
   .main-nav a { padding: 14px; }
   .main-nav .nav-official { margin-top: 8px; text-align: center; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { min-height: auto; }
   .hero-logo { min-height: 300px; }
   .preview-section { grid-template-columns: 1fr; gap: 32px; }
   .article-heading { align-items: flex-start; flex-direction: column; }

@@ -166,7 +166,7 @@ Diese Bilder werden gemeinsam mit den Bildern vergangener Veranstaltungen in der
 
 ## Diashow
 
-Die Diashow steht nach dem einleitenden Seitenbereich und unmittelbar vor den Terminen. Sie vermittelt einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext oder Bildunterschriften aus. Die Bilder füllen nicht die gesamte Seitenbreite. Ein schmaler farbiger Rand bindet die Diashow sichtbar in das Seitendesign ein. Navigationselemente und notwendige barrierefreie Beschriftungen bleiben möglich, sollen sich optisch aber zurückhalten.
+Die Diashow steht nach dem einleitenden Seitenbereich und unmittelbar vor den Terminen. Sie vermittelt einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext oder Bildunterschriften aus. Die Bilder füllen nicht die gesamte Seitenbreite. Ein schmaler farbiger Rand bindet die Diashow sichtbar in das Seitendesign ein. Beim Zuschneiden wird der obere Bildbereich bevorzugt, damit insbesondere Köpfe sichtbar bleiben. Navigationselemente und notwendige barrierefreie Beschriftungen bleiben möglich, sollen sich optisch aber zurückhalten.
 
 Die Diashow wird automatisch aus zwei Quellen zusammengestellt:
 

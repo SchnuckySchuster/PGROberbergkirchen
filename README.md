@@ -29,6 +29,16 @@ Die Website verwendet das Logo unter:
 
 Die vereinbarte Ordnerstruktur und alle Dateinamensregeln stehen in `KI/Auftrag.md`. Die automatische Verarbeitung der Veranstaltungen, Bilder und Markdown-Artikel wird in den nächsten Ausbauschritten umgesetzt.
 
+### Artikelkatalog aktualisieren
+
+Neue Markdown-Artikel werden unter `redaktioneller_inhalt/artikel/` abgelegt. Danach wird der automatisch erzeugte Artikelkatalog aktualisiert:
+
+```bash
+node scripts/generate-article-catalog.mjs
+```
+
+Das Skript liest Titel und Veröffentlichungsdatum aus den Dateinamen. Eine vollständig automatische Ausführung beim Veröffentlichen wird mit dem späteren Veröffentlichungsablauf ergänzt.
+
 ## Hinweis
 Diese Version ist absichtlich ohne Backend oder CMS gebaut. Die Pflege soll später ausschließlich über klar benannte Ordner, Bilder und Markdown-Dateien erfolgen.
 

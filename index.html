@@ -12,9 +12,6 @@
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
   <header class="site-header">
-    <a class="brand" href="#start" aria-label="Zur Startseite">
-      <img src="redaktioneller_inhalt/logo/logo.png" alt="Pfarrgemeinderat Oberbergkirchen – Kirche im Aufschwung">
-    </a>
     <button class="menu-toggle" type="button" aria-controls="mainNav" aria-expanded="false">
       <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       <span class="sr-only">Menü öffnen</span>
@@ -26,6 +23,9 @@
       <a class="nav-official" href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843"
         target="_blank" rel="noopener noreferrer">Zum Pfarrverband <span aria-hidden="true">↗</span></a>
     </nav>
+    <a class="brand" href="#start" aria-label="Zur Startseite">
+      <img src="redaktioneller_inhalt/logo/logo.png" alt="Pfarrgemeinderat Oberbergkirchen – Kirche im Aufschwung">
+    </a>
   </header>
 
   <main id="inhalt">
@@ -76,18 +76,30 @@
       </div>
     </section>
 
-    <section id="artikel" class="preview-section preview-articles">
-      <div class="section-heading">
-        <p class="eyebrow">Lesenswert</p>
-        <h2>Berichte und Geschichten</h2>
-        <p>Aktuelle Artikel, ein vollständiger Index und eine zufällige Entdeckung bekommen hier ihren Platz.</p>
+    <section id="artikel" class="article-section">
+      <div class="article-heading">
+        <div class="section-heading">
+          <p class="eyebrow">Lesenswert</p>
+          <h2>Berichte und Geschichten</h2>
+          <p>Aktuelles zuerst – oder einfach einen Artikel nach dem Zufallsprinzip entdecken.</p>
+        </div>
+        <div class="article-actions">
+          <button id="randomArticle" class="button button-secondary" type="button">Zufälliger Artikel</button>
+          <button id="openArticleIndex" class="text-button" type="button">Alle Artikel</button>
+        </div>
       </div>
-      <div class="placeholder-card" aria-label="Vorschau auf den künftigen Artikelbereich">
-        <span class="placeholder-icon" aria-hidden="true">03</span>
-        <div><strong>Artikel werden im Markdown-Format eingelesen.</strong><p>Beim Öffnen füllt ein Artikel die Seite aus und bleibt direkt verlinkbar.</p></div>
+      <div id="articleRail" class="article-rail" aria-live="polite">
+        <p class="loading-message">Artikel werden geladen …</p>
       </div>
     </section>
   </main>
+
+  <section id="articleReader" class="article-reader" hidden>
+    <div class="reader-toolbar">
+      <button id="closeArticle" class="reader-back" type="button">← Zurück zu den Artikeln</button>
+    </div>
+    <article id="articleContent" class="reader-content"></article>
+  </section>
 
   <footer class="site-footer">
     <div>
@@ -106,6 +118,14 @@
   <dialog id="legalDialog" class="legal-dialog" aria-labelledby="legalTitle">
     <button class="dialog-close" type="button" aria-label="Dialog schließen">×</button>
     <article id="legalDetail"></article>
+  </dialog>
+  <dialog id="articleIndexDialog" class="legal-dialog article-index-dialog" aria-labelledby="articleIndexTitle">
+    <button class="dialog-close article-index-close" type="button" aria-label="Artikelindex schließen">×</button>
+    <div class="article-index-content">
+      <p class="eyebrow">Übersicht</p>
+      <h1 id="articleIndexTitle">Alle Artikel</h1>
+      <div id="articleIndex"></div>
+    </div>
   </dialog>
   <script src="app.js?v=2.0.0"></script>
 </body>

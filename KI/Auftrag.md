@@ -19,6 +19,12 @@ Der laufende Pflegeaufwand soll möglichst gering sein. Neue Inhalte sollen übe
 - längere Inhaltsreihen möglichst horizontal durchsuchbar
 - Index beziehungsweise Gesamtübersicht für alle Artikel
 
+## Seitenkopf
+
+- Das Hauptmenü steht auf der linken Seite.
+- Das Logo steht auf der rechten Seite.
+- Auf kleinen Bildschirmen steht der Menüknopf links und das Logo rechts.
+
 ## Logo
 
 Als Logo der Website wird ausschließlich die vorhandene Datei `redaktioneller_inhalt/logo/logo.png` verwendet. Das Logo erscheint im Seitenkopf und an geeigneten hervorgehobenen Stellen des Designs.
@@ -131,9 +137,8 @@ Für zukünftige Veranstaltungen soll sowohl eine bildliche Bewerbung in Form ei
 Nach Ablauf des Datums wechselt eine Veranstaltung automatisch in die Vergangenheit. Ihre normalen Bilder werden dann Teil des Diashow-Fundus.
 
 - `Plakat`-Bilder werden nach der Veranstaltung nicht in der Diashow gezeigt.
-- Enthält der Ordner eine `bericht.md`, wird daraus ein Artikel über die vergangene Veranstaltung.
-- Der Artikel darf auf Bilder aus demselben Veranstaltungsordner verweisen.
-- Ohne Bericht bleibt die Veranstaltung ausschließlich über ihre Bilder in der Diashow vertreten.
+- Artikel werden unabhängig davon im zentralen Artikelordner gepflegt und dürfen auf Bilder aus einem Veranstaltungsordner verweisen.
+- Ohne einen passenden Artikel bleibt die vergangene Veranstaltung ausschließlich über ihre Bilder in der Diashow vertreten.
 
 Für mehrtägige Veranstaltungen ist später bei Bedarf eine Regel für ein Enddatum zu ergänzen.
 
@@ -144,6 +149,8 @@ Der Ordner `redaktioneller_inhalt/bilder/` enthält Bilder, die keiner Veranstal
 Diese Bilder werden gemeinsam mit den Bildern vergangener Veranstaltungen in der Diashow berücksichtigt.
 
 ## Diashow
+
+Die Diashow steht unmittelbar unter dem Seitenkopf und damit vor allen Textbereichen der Startseite. Sie vermittelt beim Einstieg einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext oder Bildunterschriften aus. Navigationselemente und notwendige barrierefreie Beschriftungen bleiben möglich, sollen sich optisch aber zurückhalten.
 
 Die Diashow wird automatisch aus zwei Quellen zusammengestellt:
 
@@ -156,6 +163,8 @@ Die Auswahl erfolgt zufällig, aber gewichtet:
 - ältere Bilder bleiben grundsätzlich auswählbar,
 - mehrere Bilder derselben Veranstaltung sollen möglichst nicht unmittelbar aufeinander folgen,
 - Plakate zukünftiger oder vergangener Veranstaltungen gehören nicht in die Diashow.
+- Bei reduzierter Bewegung im Betriebssystem erfolgt kein automatischer Bildwechsel.
+- Bei einer Bedienung durch den Besucher wird der automatische Wechsel vorübergehend angehalten.
 
 Die konkrete Gewichtungsformel wird bei der Umsetzung kleinräumig festgelegt und dokumentiert.
 

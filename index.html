@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#fffaf3">
   <meta name="description" content="Informationen aus dem Pfarrgemeinderat Oberbergkirchen">
   <title>Pfarrgemeinderat Oberbergkirchen</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.1.0">
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -52,6 +52,17 @@
         rel="noopener noreferrer">Offizielle Informationen <span aria-hidden="true">↗</span></a>
     </aside>
 
+    <section class="slideshow" aria-label="Bilder aus dem Gemeindeleben">
+      <div id="slideshowTrack" class="slideshow-track" aria-live="off"></div>
+      <div class="slideshow-controls">
+        <button id="previousSlide" type="button" aria-label="Vorheriges Bild">‹</button>
+        <button id="toggleSlideshow" type="button" aria-label="Diashow anhalten" aria-pressed="false">
+          <span aria-hidden="true">Ⅱ</span>
+        </button>
+        <button id="nextSlide" type="button" aria-label="Nächstes Bild">›</button>
+      </div>
+    </section>
+
     <section id="termine" class="preview-section preview-events">
       <div class="section-heading">
         <p class="eyebrow">Demnächst</p>
@@ -61,18 +72,6 @@
       <div class="placeholder-card" aria-label="Vorschau auf den künftigen Veranstaltungsbereich">
         <span class="placeholder-icon" aria-hidden="true">01</span>
         <div><strong>Der Veranstaltungsbereich folgt als nächster Schritt.</strong><p>Plakate und Informationen erscheinen später ohne doppelte redaktionelle Pflege.</p></div>
-      </div>
-    </section>
-
-    <section id="einblicke" class="preview-section preview-gallery">
-      <div class="section-heading">
-        <p class="eyebrow">Einblicke</p>
-        <h2>Bilder aus dem Gemeindeleben</h2>
-        <p>Die Diashow wird aus vergangenen Veranstaltungen und dem freien Bilderfundus zusammengestellt.</p>
-      </div>
-      <div class="placeholder-card" aria-label="Vorschau auf die künftige Diashow">
-        <span class="placeholder-icon" aria-hidden="true">02</span>
-        <div><strong>Die gewichtete Diashow wird anschließend ergänzt.</strong><p>Neue Aufnahmen werden häufiger gezeigt, ältere bleiben weiterhin sichtbar.</p></div>
       </div>
     </section>
 
@@ -127,6 +126,6 @@
       <div id="articleIndex"></div>
     </div>
   </dialog>
-  <script src="app.js?v=2.0.0"></script>
+  <script src="app.js?v=2.1.0"></script>
 </body>
 </html>

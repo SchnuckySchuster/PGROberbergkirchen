@@ -150,7 +150,7 @@ Diese Bilder werden gemeinsam mit den Bildern vergangener Veranstaltungen in der
 
 ## Diashow
 
-Die Diashow steht unmittelbar unter dem Seitenkopf und damit vor allen Textbereichen der Startseite. Sie vermittelt beim Einstieg einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext oder Bildunterschriften aus. Navigationselemente und notwendige barrierefreie Beschriftungen bleiben möglich, sollen sich optisch aber zurückhalten.
+Die Diashow steht nach dem einleitenden Seitenbereich und unmittelbar vor den Terminen. Sie vermittelt einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext oder Bildunterschriften aus. Die Bilder füllen nicht die gesamte Seitenbreite. Ein schmaler farbiger Rand bindet die Diashow sichtbar in das Seitendesign ein. Navigationselemente und notwendige barrierefreie Beschriftungen bleiben möglich, sollen sich optisch aber zurückhalten.
 
 Die Diashow wird automatisch aus zwei Quellen zusammengestellt:
 
@@ -166,7 +166,7 @@ Die Auswahl erfolgt zufällig, aber gewichtet:
 - Bei reduzierter Bewegung im Betriebssystem erfolgt kein automatischer Bildwechsel.
 - Bei einer Bedienung durch den Besucher wird der automatische Wechsel vorübergehend angehalten.
 
-Die konkrete Gewichtungsformel wird bei der Umsetzung kleinräumig festgelegt und dokumentiert.
+Für die zufällige Reihenfolge gilt folgende Gewichtung: `0,18 + e^(-AlterInTagen / 180)`. Ein ganz neues Bild hat damit ungefähr die sechsfache Auswahlchance eines sehr alten Bildes. Die Auswahl erfolgt ohne Wiederholung; Bilder aus derselben Veranstaltung werden nach Möglichkeit nicht direkt hintereinander angeordnet. Auf der Website werden nur Bilder angezeigt, deren Datum erreicht oder bereits vergangen ist.
 
 ## Artikel
 

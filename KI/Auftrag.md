@@ -228,6 +228,10 @@ Da die Website öffentlich und statisch ausgeliefert wird, sind verwendete Bilde
 - Die Gottesdienstordnung wird weder parallel gepflegt noch separat verlinkt.
 - Inhalte wie amtliche Informationen, Sakramente, Seelsorge und Pfarrbüro bleiben beim offiziellen Angebot.
 
+## Anbieterkennzeichnung
+
+Das Impressum nennt den privaten Anbieter mit vollständiger Postanschrift und E-Mail-Adresse. Wegen der veröffentlichten Artikel wird zusätzlich derselbe Anbieter als inhaltlich Verantwortlicher nach § 18 Abs. 2 MStV benannt. Das Impressum stellt klar, dass die Website kein offizieller Internetauftritt des Pfarrverbands Schönberg oder des Erzbistums München und Freising ist.
+
 ## Vorgehensweise bei der Weiterentwicklung
 
 - kleinräumig denken und umsetzen

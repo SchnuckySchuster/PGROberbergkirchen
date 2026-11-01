@@ -390,10 +390,14 @@ loadOptimizationManifest().then(loadArticles).catch(error => {
 const legalTexts = {
   impressum: `
     <h1 id="legalTitle">Impressum</h1>
-    <p><strong>Angaben zum Anbieter dieser Informationsseite</strong></p>
+    <h2>Anbieter dieser Website</h2>
     <p>Gerhard-Walter Schuster<br>Aubenham 6<br>84564 Oberbergkirchen</p>
-    <p>E-Mail: <a href="mailto:acker-teig8s@icloud.com">acker-teig8s@icloud.com</a></p>
-    <p>Diese Website informiert über die Arbeit des Pfarrgemeinderats Oberbergkirchen. Sie ist kein offizieller Internetauftritt des Pfarrverbands Schönberg oder des Erzbistums München und Freising.</p>
+    <p><strong>Kontakt</strong><br>E-Mail: <a href="mailto:acker-teig8s@icloud.com">acker-teig8s@icloud.com</a></p>
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>Verantwortlich im Sinne des § 18 Abs. 2 Medienstaatsvertrag (MStV):</p>
+    <p>Gerhard-Walter Schuster<br>Aubenham 6<br>84564 Oberbergkirchen</p>
+    <h2>Hinweis zum Angebot</h2>
+    <p>Diese Website ist eine private Informationsseite über die Arbeit des Pfarrgemeinderats Oberbergkirchen. Sie ist kein offizieller Internetauftritt des Pfarrverbands Schönberg oder des Erzbistums München und Freising.</p>
     <p>Offizielle Informationen finden Sie auf der <a href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843" target="_blank" rel="noopener noreferrer">Website des Pfarrverbands Schönberg</a>.</p>
   `,
   datenschutz: `

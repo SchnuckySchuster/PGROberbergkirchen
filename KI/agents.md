@@ -2,6 +2,12 @@
 
 Dieses Projekt hat zum Ziel eine moderne Internetseite für den Pfarrgemeinderat Oberbergkirchen zu bauen.
 
+## Verbindlicher Arbeitsauftrag
+
+Der aktuelle, ausführliche Arbeitsauftrag steht in [Auftrag.md](Auftrag.md). Er ist bei allen Planungen und Änderungen verbindlich zu berücksichtigen.
+
+Die Datei `Auftrag.md` ist bei jeder neuen oder geänderten fachlichen Entscheidung sofort zu aktualisieren, damit sie stets den aktuellen Stand des gemeinsam vereinbarten Plans enthält.
+
 ## Anforderungen
 
 - Modern und Dynamisch
@@ -17,7 +23,7 @@ Dieses Projekt hat zum Ziel eine moderne Internetseite für den Pfarrgemeinderat
   - Rahmen
 
     - Menü
-    - Verweis auf die Seite des Pfarrverbndes Schönberg und die Gottesdiestordnung
+    - Verweis auf die Seite des Pfarrverbands Schönberg
 
   - Diashow
   - Termine und Veranstaltungshinweise

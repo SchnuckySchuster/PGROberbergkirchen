@@ -1,130 +1,112 @@
 <!doctype html>
 <html lang="de">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#dff7f3" />
-  <meta name="description" content="Kirchengemeinde – Veranstaltungen, Gruppen und Neuigkeiten" />
-  <title>Unsere Kirchengemeinde</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf3">
+  <meta name="description" content="Informationen aus dem Pfarrgemeinderat Oberbergkirchen">
+  <title>Pfarrgemeinderat Oberbergkirchen</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
   <header class="site-header">
     <a class="brand" href="#start" aria-label="Zur Startseite">
-      <img src="assets/images/kirche.jpeg" alt="Zeichnung unserer Kirche" class="brand-mark">
-      <span>
-        <strong>Unsere Kirchengemeinde</strong>
-        <small>Gemeinsam glauben. Gemeinsam leben.</small>
-      </span>
+      <img src="redaktioneller_inhalt/logo/logo.png" alt="Pfarrgemeinderat Oberbergkirchen – Kirche im Aufschwung">
     </a>
-    <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
-    <nav class="main-nav">
-      <a href="#start">Start</a>
-      <a href="#aktuelles">Aktuelles</a>
-      <a href="#gruppen">Gruppen</a>
-      <a href="#kontakt">Kontakt</a>
+    <button class="menu-toggle" type="button" aria-controls="mainNav" aria-expanded="false">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <span class="sr-only">Menü öffnen</span>
+    </button>
+    <nav id="mainNav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="#termine">Termine</a>
+      <a href="#einblicke">Einblicke</a>
+      <a href="#artikel">Artikel</a>
+      <a class="nav-official" href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843"
+        target="_blank" rel="noopener noreferrer">Zum Pfarrverband <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <aside class="private-notice" aria-label="Hinweis zum privaten Charakter dieser Seite">
-    <div>
-      <strong>Private Informationsseite</strong>
-      <span>Dies ist kein offizieller Internetauftritt der Katholischen Pfarrgemeinde Oberbergkirchen.</span>
-    </div>
-    <a class="official-link" href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843" target="_blank"
-      rel="noopener noreferrer">
-      Zur offiziellen Seite der Pfarrei
-    </a>
-  </aside>
-
-  <main>
+  <main id="inhalt">
     <section id="start" class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">Willkommen</span>
-        <h1>Eine lebendige Gemeinde<br>für alle Generationen.</h1>
-        <p>Entdecken Sie Veranstaltungen, Neuigkeiten und die Menschen, die unsere Gemeinde mit Leben füllen.</p>
-        <a class="primary-button" href="#aktuelles">Aktuelles entdecken</a>
+      <div class="hero-content">
+        <p class="eyebrow">Pfarrgemeinderat Oberbergkirchen</p>
+        <h1>Kirche vor Ort.<br>Gemeinsam gestaltet.</h1>
+        <p class="hero-intro">Hier berichten wir über Projekte, Veranstaltungen und das, was unsere Gemeinschaft bewegt.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#termine">Aktuelles entdecken</a>
+          <a class="button button-secondary" href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843"
+            target="_blank" rel="noopener noreferrer">Offizielle Seite des Pfarrverbands</a>
+        </div>
       </div>
-
-      <div class="church-illustration-card">
-        <img src="assets/images/kirche.jpeg" alt="Zeichnung unserer Kirche">
+      <div class="hero-logo" aria-hidden="true">
+        <img src="redaktioneller_inhalt/logo/logo.png" alt="">
       </div>
     </section>
 
-    <section class="slideshow-section" aria-label="Bilder aus unserer Gemeinde">
+    <aside class="role-note" aria-label="Einordnung dieser Website">
+      <strong>Gut zu wissen</strong>
+      <p>Diese Seite zeigt die Arbeit des Pfarrgemeinderats Oberbergkirchen. Amtliche Informationen, Seelsorge und Pfarrbüro finden Sie beim Pfarrverband Schönberg.</p>
+      <a href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843" target="_blank"
+        rel="noopener noreferrer">Offizielle Informationen <span aria-hidden="true">↗</span></a>
+    </aside>
+
+    <section id="termine" class="preview-section preview-events">
       <div class="section-heading">
-        <span class="eyebrow">Einblicke</span>
-        <h2>Unsere Gemeinde in Bildern</h2>
+        <p class="eyebrow">Demnächst</p>
+        <h2>Termine und Veranstaltungen</h2>
+        <p>Kommende Veranstaltungen werden hier automatisch nach Datum angezeigt.</p>
       </div>
-      <div class="slider">
-        <div id="slides" class="slides"></div>
-        <button class="slider-button prev" aria-label="Vorheriges Bild">‹</button>
-        <button class="slider-button next" aria-label="Nächstes Bild">›</button>
-        <div id="dots" class="slider-dots"></div>
+      <div class="placeholder-card" aria-label="Vorschau auf den künftigen Veranstaltungsbereich">
+        <span class="placeholder-icon" aria-hidden="true">01</span>
+        <div><strong>Der Veranstaltungsbereich folgt als nächster Schritt.</strong><p>Plakate und Informationen erscheinen später ohne doppelte redaktionelle Pflege.</p></div>
       </div>
     </section>
 
-    <section id="aktuelles" class="content-section">
+    <section id="einblicke" class="preview-section preview-gallery">
       <div class="section-heading">
-        <span class="eyebrow">Aktuelles</span>
-        <h2>Neuigkeiten & Veranstaltungen</h2>
+        <p class="eyebrow">Einblicke</p>
+        <h2>Bilder aus dem Gemeindeleben</h2>
+        <p>Die Diashow wird aus vergangenen Veranstaltungen und dem freien Bilderfundus zusammengestellt.</p>
       </div>
-      <div id="articles" class="article-grid">
-        <p class="loading">Artikel werden geladen …</p>
+      <div class="placeholder-card" aria-label="Vorschau auf die künftige Diashow">
+        <span class="placeholder-icon" aria-hidden="true">02</span>
+        <div><strong>Die gewichtete Diashow wird anschließend ergänzt.</strong><p>Neue Aufnahmen werden häufiger gezeigt, ältere bleiben weiterhin sichtbar.</p></div>
       </div>
     </section>
 
-    <section id="gruppen" class="groups-section">
+    <section id="artikel" class="preview-section preview-articles">
       <div class="section-heading">
-        <span class="eyebrow">Mitmachen</span>
-        <h2>Unsere Gruppen</h2>
+        <p class="eyebrow">Lesenswert</p>
+        <h2>Berichte und Geschichten</h2>
+        <p>Aktuelle Artikel, ein vollständiger Index und eine zufällige Entdeckung bekommen hier ihren Platz.</p>
       </div>
-      <div id="groups" class="group-grid"></div>
-    </section>
-
-    <section id="kontakt" class="contact-section">
-      <div>
-        <span class="eyebrow">Kontakt</span>
-        <h2>Wir freuen uns auf Sie.</h2>
-        <p>Hinweise, Ergänzungen oder Korrekturen zu veröffentlichten Informationen können direkt an den privaten
-          Betreiber dieser Seite gesendet werden.</p>
-      </div>
-      <div class="contact-card">
-        <strong>Privater Betreiber dieser Informationsseite</strong>
-        <span>Gerhard-Walter Schuster</span>
-        <span>Aubenham 6</span>
-        <span>84564 Oberbergkirchen</span>
-        <a href="mailto:acker-teig8s@icloud.com">acker-teig8s@icloud.com</a>
+      <div class="placeholder-card" aria-label="Vorschau auf den künftigen Artikelbereich">
+        <span class="placeholder-icon" aria-hidden="true">03</span>
+        <div><strong>Artikel werden im Markdown-Format eingelesen.</strong><p>Beim Öffnen füllt ein Artikel die Seite aus und bleibt direkt verlinkbar.</p></div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <span>© <span id="year"></span> Private Informationsseite Oberbergkirchen</span>
-    <span class="footer-links">
+  <footer class="site-footer">
+    <div>
+      <img src="redaktioneller_inhalt/logo/logo.png" alt="" aria-hidden="true">
+      <p><strong>Pfarrgemeinderat Oberbergkirchen</strong><br>Informationen aus dem Gemeindeleben.</p>
+    </div>
+    <div class="footer-links">
       <button type="button" data-legal="impressum">Impressum</button>
-      <span>·</span>
       <button type="button" data-legal="datenschutz">Datenschutz</button>
-    </span>
+      <a href="https://www2.erzbistum-muenchen.de/pfarrei/pv-schoenberg/cont/61843" target="_blank"
+        rel="noopener noreferrer">Pfarrverband Schönberg ↗</a>
+    </div>
+    <small>© <span id="year"></span> Informationsseite Oberbergkirchen</small>
   </footer>
 
-  <dialog id="legalDialog" class="article-dialog legal-dialog">
-    <button class="dialog-close legal-close" aria-label="Schließen">×</button>
+  <dialog id="legalDialog" class="legal-dialog" aria-labelledby="legalTitle">
+    <button class="dialog-close" type="button" aria-label="Dialog schließen">×</button>
     <article id="legalDetail"></article>
   </dialog>
-
-  <section id="articleDetailSection" class="article-detail-section" hidden>
-    <div class="article-detail-toolbar">
-      <button id="articleDetailClose" type="button" class="article-detail-close" aria-label="Artikel schließen">
-        ← Zurück zu den Artikeln
-      </button>
-    </div>
-    <article id="articleDetail" class="article-detail"></article>
-  </section>
-
-  <script src="app.js?v=1.0.0"></script>
+  <script src="app.js?v=2.0.0"></script>
 </body>
-
 </html>

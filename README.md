@@ -19,65 +19,18 @@ Dann im Browser:
 5. Branch: `main`, Ordner `/root`.
 6. Speichern.
 
-## Kirchenzeichnung ersetzen
-Datei ersetzen:
-`assets/images/kirche.jpeg`
+## Logo
 
-Am einfachsten eine PNG-, JPG-, WebP- oder SVG-Datei verwenden und in `index.html`
-den Dateinamen an zwei Stellen ändern, falls die Endung abweicht.
+Die Website verwendet das Logo unter:
 
-## Neue Bilder in die Diaschau
-Bilder nach:
-`assets/images/`
+`redaktioneller_inhalt/logo/logo.png`
 
-Danach `content/slides.json` ergänzen:
+## Redaktionelle Inhalte
 
-```json
-{
-  "image": "assets/images/mein-bild.jpg",
-  "caption": "Mein Bildtitel",
-  "alt": "Kurze Bildbeschreibung"
-}
-```
-
-## Neuen Artikel anlegen
-1. Markdown-Datei unter `content/articles/` erstellen, z. B. `pfarrfest.md`.
-2. `content/articles.json` um einen Eintrag ergänzen:
-
-```json
-{
-  "title": "Pfarrfest",
-  "date": "20. September 2026 · 14:00 Uhr",
-  "summary": "Kurze Vorschau auf der Startseite.",
-  "image": "assets/images/pfarrfest.jpg",
-  "file": "content/articles/pfarrfest.md"
-}
-```
-
-Der Artikel selbst kann ganz normal in Markdown geschrieben werden:
-
-```md
-# Pfarrfest
-
-**20. September 2026 · 14:00 Uhr**
-
-Herzliche Einladung ...
-
-## Programm
-
-- Musik
-- Kaffee und Kuchen
-- Kinderprogramm
-```
-
-## Gruppen ändern
-`content/groups.json`
-
-Dort können Pfarrgemeinderat, Ministranten, Chor usw. ohne HTML-Kenntnisse gepflegt werden.
+Die vereinbarte Ordnerstruktur und alle Dateinamensregeln stehen in `KI/Auftrag.md`. Die automatische Verarbeitung der Veranstaltungen, Bilder und Markdown-Artikel wird in den nächsten Ausbauschritten umgesetzt.
 
 ## Hinweis
-Diese Version ist absichtlich ohne Backend/CMS gebaut. Die Pflege erfolgt über wenige JSON- und Markdown-Dateien.
-Später kann problemlos ein Git-basiertes CMS ergänzt werden, ohne das Design neu zu bauen.
+Diese Version ist absichtlich ohne Backend oder CMS gebaut. Die Pflege soll später ausschließlich über klar benannte Ordner, Bilder und Markdown-Dateien erfolgen.
 
 ## Rechtliches
 

@@ -67,6 +67,23 @@ Nach der Bestätigung werden alle Änderungen des Projekts gemeinsam veröffentl
 
 GitHub Actions baut und veröffentlicht die Website nach der Übertragung automatisch.
 
+### Automatische Aktualisierung beim Commit
+
+Für dieses Projekt ist ein Git-`pre-commit`-Hook unter `.githooks/pre-commit` eingerichtet. Bei jedem Commit – auch aus VS Code – führt er automatisch die vorhandene Aktualisierung aus:
+
+- Bilder werden als verkleinerte WebP-Arbeitskopien optimiert,
+- alle Kataloge werden neu erzeugt,
+- die Inhalte werden geprüft,
+- geänderte Katalogdateien werden dem Commit hinzugefügt.
+
+Die Originalbilder bleiben unverändert. Der Hook ist ausschließlich in diesem Repository aktiv. Nach einem neuen Klonen wird er einmalig mit folgendem Befehl eingeschaltet:
+
+```bash
+git config --local core.hooksPath .githooks
+```
+
+Falls ein Commit wegen fehlender Abhängigkeiten abbricht, einmal `npm install` ausführen.
+
 ## Veranstaltungen pflegen
 
 Jede Veranstaltung erhält einen eigenen Unterordner:

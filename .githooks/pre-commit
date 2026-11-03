@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -eu
+
+project_root=$(git rev-parse --show-toplevel)
+cd "$project_root"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "Fehler: Node.js wird für die automatische Bildoptimierung benötigt." >&2
+  exit 1
+fi
+
+if [ ! -d node_modules ]; then
+  echo "Fehler: Abhängigkeiten fehlen. Bitte einmal 'npm install' ausführen." >&2
+  exit 1
+fi
+
+echo "Bilder optimieren, Kataloge aktualisieren und Inhalte prüfen …"
+npm run update
+
+git add -- \
+  redaktioneller_inhalt/artikel.json \
+  redaktioneller_inhalt/bildoptimierung.json \
+  redaktioneller_inhalt/slideshow.json \
+  redaktioneller_inhalt/veranstaltungen.json
+
+echo "Automatische Aktualisierung abgeschlossen."

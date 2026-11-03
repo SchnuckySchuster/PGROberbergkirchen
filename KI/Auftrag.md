@@ -29,7 +29,7 @@ Der laufende Pflegeaufwand soll möglichst gering sein. Neue Inhalte sollen übe
 
 ## Logo
 
-Als Logo der Website wird ausschließlich die vorhandene Datei `redaktioneller_inhalt/logo/logo.png` verwendet. Das Logo erscheint im Seitenkopf und an geeigneten hervorgehobenen Stellen des Designs.
+Als Logo der Website wird ausschließlich die vorhandene Datei `redaktioneller_inhalt/logo/logo.png` verwendet. Das Logo erscheint im Seitenkopf und ersetzt im einleitenden Seitenbereich die bisherige große Textüberschrift „Kirche vor Ort. Gemeinsam gestaltet.“.
 
 ## Inhaltsstruktur
 
@@ -131,6 +131,8 @@ Die Aktualisierung umfasst außerdem:
 - optionale lokale Vorschau im Browser
 
 `veroeffentlichen.command` aktualisiert und prüft die Inhalte, zeigt die Git-Änderungen, fragt vor der Übertragung nach und überträgt anschließend einen Commit zu GitHub. GitHub Actions erstellt daraus automatisch das optimierte Veröffentlichungspaket und veröffentlicht es über GitHub Pages.
+
+Zusätzlich führt der nur für dieses Repository aktivierte Git-`pre-commit`-Hook `.githooks/pre-commit` bei jedem Commit automatisch die Bildoptimierung, Katalogerzeugung und Inhaltsprüfung aus. Er nimmt aktualisierte Katalogdateien in den Commit auf; die Originalbilder bleiben unverändert.
 
 ## Zukünftige Veranstaltungen
 

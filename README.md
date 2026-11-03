@@ -111,7 +111,7 @@ Jede Veranstaltung erhält einen eigenen Unterordner:
 ```text
 redaktioneller_inhalt/
 └── veranstaltungen/
-    └── VeranstaltungstitelInCamelCase-JJJJ-MM-TT/
+    └── JJJJ-MM-TT-VeranstaltungstitelInCamelCase/
         ├── Plakat.png
         ├── ErstesBild.jpeg
         ├── ZweitesBild.jpeg
@@ -121,14 +121,14 @@ redaktioneller_inhalt/
 Beispiel:
 
 ```text
-redaktioneller_inhalt/veranstaltungen/Adventskonzert-2026-12-06/
+redaktioneller_inhalt/veranstaltungen/2026-12-06-Adventskonzert/
 ```
 
 Regeln:
 
-- Der Ordnername enthält Titel und Datum der Veranstaltung.
+- Der Ordnername beginnt mit dem Datum und enthält danach den Titel der Veranstaltung.
 - Das Datum verwendet das Format `JJJJ-MM-TT`.
-- Ein einfacher Bindestrich `-` trennt Titel und Datum.
+- Ein einfacher Bindestrich `-` trennt das vorangestellte Datum vom Titel.
 - `Plakat.jpg`, `Plakat.jpeg`, `Plakat.png` und `Plakat.webp` werden als Plakat erkannt.
 - Im Terminbereich werden ausschließlich solche Plakatdateien angezeigt. Ohne `Plakat` erscheint die Veranstaltung dort nicht; andere Bilder werden nicht als Ersatz verwendet.
 - Eine optionale `information.md` kann zusätzlichen Text enthalten.
@@ -150,13 +150,13 @@ redaktioneller_inhalt/bilder/
 Dateinamensmuster:
 
 ```text
-BildtitelInCamelCase-JJJJ-MM-TT.jpeg
+JJJJ-MM-TT-BildtitelInCamelCase.jpeg
 ```
 
 Beispiel:
 
 ```text
-KircheImSchnee-2026-01-15.jpeg
+2026-01-15-KircheImSchnee.jpeg
 ```
 
 Die Diashow mischt freie Bilder mit Bildern vergangener Veranstaltungen. Neuere Bilder werden bei der zufälligen Reihenfolge deutlich bevorzugt; ältere bleiben weiterhin im Fundus.
@@ -172,14 +172,16 @@ redaktioneller_inhalt/artikel/
 Dateinamensmuster:
 
 ```text
-ArtikeltitelInCamelCase-JJJJ-MM-TT.md
+JJJJ-MM-TT-ArtikeltitelInCamelCase.md
 ```
 
 Das Datum ist das Veröffentlichungsdatum. Beispiel:
 
 ```text
-SommerfestRueckblick-2026-08-04.md
+2026-08-04-SommerfestRueckblick.md
 ```
+
+Durch das vorangestellte Datum werden Artikel, Veranstaltungsordner und freie Bilder bereits bei der Sortierung nach Dateinamen chronologisch gruppiert.
 
 Ein einfacher Artikel:
 
@@ -188,7 +190,7 @@ Ein einfacher Artikel:
 
 Bei schönem Wetter kamen viele Menschen rund um das Pfarrheim zusammen.
 
-![Gäste beim Sommerfest](../veranstaltungen/Sommerfest-2026-08-02/Gruppenbild.jpeg)
+![Gäste beim Sommerfest](../veranstaltungen/2026-08-02-Sommerfest/Gruppenbild.jpeg)
 
 Vielen Dank an alle Helferinnen und Helfer.
 ```

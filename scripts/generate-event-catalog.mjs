@@ -7,7 +7,7 @@ const eventRoot = path.join(root, 'redaktioneller_inhalt', 'veranstaltungen');
 const outputFile = path.join(root, 'redaktioneller_inhalt', 'veranstaltungen.json');
 const optimizationManifest = JSON.parse(await readFile(
   path.join(root, 'redaktioneller_inhalt', 'bildoptimierung.json'), 'utf8'));
-const datedNamePattern = /^(?<title>.+)-(?<date>\d{4}-\d{2}-\d{2})$/;
+const datedNamePattern = /^(?<date>\d{4}-\d{2}-\d{2})-(?<title>.+)$/;
 
 function readableTitle(value) {
   return value

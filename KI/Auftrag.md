@@ -36,18 +36,18 @@ Als Logo der Website wird ausschließlich die vorhandene Datei `redaktioneller_i
 ```text
 redaktioneller_inhalt/
 ├── veranstaltungen/
-│   ├── Sommerfest-2026-08-02/
+│   ├── 2026-08-02-Sommerfest/
 │   │   ├── Plakat.jpeg
 │   │   ├── Gottesdienst.jpeg
 │   │   ├── KaffeeUndKuchen.jpeg
 │   │   └── bericht.md
-│   └── Adventskonzert-2026-12-06/
+│   └── 2026-12-06-Adventskonzert/
 │       ├── Plakat.jpeg
 │       └── information.md
 └── bilder/
-    ├── Fronleichnamsaltar-2026-06-04.jpeg
-    ├── KircheImSchnee-2025-12-15.jpeg
-    └── Osterkerze-2026-04-05.jpeg
+    ├── 2026-06-04-Fronleichnamsaltar.jpeg
+    ├── 2025-12-15-KircheImSchnee.jpeg
+    └── 2026-04-05-Osterkerze.jpeg
 ```
 
 ## Namensregeln
@@ -55,16 +55,16 @@ redaktioneller_inhalt/
 ### Veranstaltungsordner
 
 ```text
-VeranstaltungstitelInCamelCase-JJJJ-MM-TT
+JJJJ-MM-TT-VeranstaltungstitelInCamelCase
 ```
 
 Beispiel:
 
 ```text
-TagDerOffenenTuer-2026-09-20
+2026-09-20-TagDerOffenenTuer
 ```
 
-Der Teil vor dem letzten Bindestrich mit anschließendem Datum ist der Veranstaltungstitel. Das Datum wird für die zeitliche Einordnung und Sortierung verwendet. Als Trenner wird immer ein einfacher Bindestrich verwendet.
+Das Datum steht am Anfang, danach folgt der Veranstaltungstitel. Das Datum wird für die zeitliche Einordnung und Sortierung verwendet. Als Trenner wird immer ein einfacher Bindestrich verwendet. Durch das vorangestellte Datum werden Veranstaltungsordner, Artikel und freie Bilder im Dateisystem chronologisch gruppiert.
 
 ### Bilder innerhalb einer Veranstaltung
 
@@ -85,13 +85,13 @@ Das Veranstaltungsdatum wird aus dem Ordnernamen übernommen und muss nicht in j
 ### Freie Bilder ohne Veranstaltung
 
 ```text
-BildtitelInCamelCase-JJJJ-MM-TT.jpeg
+JJJJ-MM-TT-BildtitelInCamelCase.jpeg
 ```
 
 Beispiel:
 
 ```text
-KircheImSchnee-2025-12-15.jpeg
+2025-12-15-KircheImSchnee.jpeg
 ```
 
 ### Anzeige der Titel
@@ -193,14 +193,14 @@ Artikel werden als eigenständige Markdown-Dateien abgelegt:
 ```text
 redaktioneller_inhalt/
 └── artikel/
-    ├── RenovierungDerKirche-2026-05-12.md
-    └── SommerfestRueckblick-2026-08-04.md
+    ├── 2026-05-12-RenovierungDerKirche.md
+    └── 2026-08-04-SommerfestRueckblick.md
 ```
 
 Für Artikelnamen gilt das Muster:
 
 ```text
-ArtikeltitelInCamelCase-JJJJ-MM-TT.md
+JJJJ-MM-TT-ArtikeltitelInCamelCase.md
 ```
 
 Das Datum bezeichnet das Veröffentlichungsdatum des Artikels. Titel und Datum werden aus dem Dateinamen gewonnen. Artikel dürfen Bilder aus den Veranstaltungs- und Bilderordnern einbetten.

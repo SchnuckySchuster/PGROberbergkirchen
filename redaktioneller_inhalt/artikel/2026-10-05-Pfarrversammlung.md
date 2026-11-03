@@ -1,4 +1,7 @@
 # Pfarrversammlung in Oberbergkirchen
+
+Bei der Pfarrversammlung informierten Kirchenverwaltung, Pfarrgemeinderat und Bürgermeister über aktuelle Bauprojekte, die finanzielle Lage und Anliegen aus der Pfarrgemeinde.
+
 Am Erntedanksonntag fand nach dem Familiengottesdienst im Pfarrheim die Pfarrversammlung statt. Nach einem Imbiss mit Kürbissuppe und der Begrüßung durch die Pfarrgemeinderatsvorsitzende Nicole Ansorg startete Kirchenpfleger Willi Haas seine Präsentation. Unterstützt wurde er dabei von Verwaltungsleiterin Karin Löw.
 Haas stellte vor allem die kostenintensiven Renovierungen und Instandhaltungsarbeiten in den Mittelpunkt. So musste der Turm der Bruder-Konrad-Kirche von den Hinterlassenschaften der Dohlen befreit werden, um weitere Schäden am Mauerwerk zu verhindern. Thomas Fraundienst und Helfer wiederum opferten Zeit und ihre Expertise im Umgang mit schwerem Gerät, um den Pfarrgarten in Schuss zu halten. Größere Posten im Pfarreihaushalt sind die Heizungsertüchtigung am Pfarrheim und die Stützmauer am Friedhof, die durch ihre schlechte Zugänglichkeit für Baumaschinen bei gleichzeitiger immenser Tragelast stark zu Buche schlägt. Trotz der erfolgreichen Bemühungen von Karin Löw, vom Ordinariat deutliche Zuschüsse zu erhalten, bleibt dem Kirchenstiftungshaushalt ein Defizit von mehreren Tausend Euro.
 Für ihre hilfreichen und wertvollen Dienste rund um das Kirchengebäude gab es noch für Maria Haider, Klara Hoferer, Gerti Hargasser und Irmi Haas kleine Aufmerksamkeiten und dankbaren Applaus.

@@ -122,7 +122,7 @@ function articlePage(article, markdown, manifest) {
   <meta name="twitter:description" content="${escapeHtml(description)}">
   ${imageUrl ? `<meta name="twitter:image" content="${escapeHtml(imageUrl)}">` : ''}
   <title>${escapeHtml(`${heading} | ${siteName}`)}</title>
-  <link rel="stylesheet" href="${escapeHtml(new URL('styles.css?v=2.2.0', siteUrl).href)}">
+  <link rel="stylesheet" href="${escapeHtml(new URL('styles.css?v=2.2.1', siteUrl).href)}">
   <script type="application/ld+json">${jsonForHtml(structuredData)}</script>
 </head>
 <body>

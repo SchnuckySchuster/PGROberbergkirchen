@@ -1,4 +1,7 @@
 # Liebe Christine,
+
+Mit einer persönlichen Laudatio wurde Christine Gossert für ihr jahrzehntelanges Engagement im Pfarrgemeinderat und für die Pfarrgemeinde Oberbergkirchen gewürdigt.
+
 knapp 30 Jahre warst Du Mitglied des Pfarrgemeinderates Oberbergkirchen, davon 20 Jahre aktiv als Vorsitzende, dazu 12 Jahre Pfarrverbandsratsvorsitzende.
 Hinter diesen beeindruckenden Zahlen steht viel Tatkraft, Fleiß, Interesse an der Gemeinschaft, Festigkeit im Glauben und Freude an der gemeinsamen Planung und Durchführung von traditionellen und außergewöhnlichen Veranstaltungen und Festen. Dazu natürlich der Verzicht auf Freizeit und auf Zeit mit der Familie, vor allem für Deinen geliebten Ehemann und Unterstützer Sigi.
 In der Pfarrgeschichte Oberbergkirchens hast Du ganz besonders die Seniorenarbeit gepflegt und die Entwicklung und den Aufbau des neuen Pfarrheims begleitet und durch mühevolle Arbeit unterstützt.

@@ -207,7 +207,12 @@ let optimizationManifest = {};
 
 async function loadOptimizationManifest() {
   const response = await fetch('redaktioneller_inhalt/bildoptimierung.json');
-  if (response.ok) optimizationManifest = await response.json();
+  if (response.ok) {
+    const manifest = await response.json();
+    optimizationManifest = Object.fromEntries(
+      Object.entries(manifest).map(([source, optimized]) => [source.normalize('NFC'), optimized])
+    );
+  }
 }
 
 function resolveArticleAsset(article, source) {
@@ -218,7 +223,7 @@ function resolveArticleAsset(article, source) {
   const markerIndex = originalUrl.pathname.indexOf(marker);
   if (markerIndex >= 0) {
     const originalPath = decodeURIComponent(originalUrl.pathname.slice(markerIndex));
-    const optimizedPath = optimizationManifest[originalPath];
+    const optimizedPath = optimizationManifest[originalPath.normalize('NFC')];
     if (optimizedPath) return new URL(optimizedPath, document.baseURI).href;
   }
   return originalUrl.href;
@@ -325,13 +330,13 @@ function renderArticleIndex() {
     : `${matches.length} Artikel gefunden`;
 
   articleIndex.innerHTML = matches.length ? matches.map(article => `
-    <button type="button" data-article="${escapeHtml(article.slug)}">
+    <a href="artikel/${escapeHtml(article.slug)}/" data-article="${escapeHtml(article.slug)}">
       <span class="article-index-main">
         <strong>${escapeHtml(article.title)}</strong>
         <small>${escapeHtml(article.preview)}${article.preview.length === 190 ? ' …' : ''}</small>
       </span>
       <time datetime="${escapeHtml(article.date)}">${escapeHtml(formatDate(article.date))}</time>
-    </button>
+    </a>
   `).join('') : '<p class="article-index-empty">Keine passenden Artikel gefunden.</p>';
 }
 
@@ -359,7 +364,7 @@ async function loadArticles() {
         <time datetime="${escapeHtml(article.date)}">${escapeHtml(formatDate(article.date))}</time>
         <h3>${escapeHtml(article.title)}</h3>
         <p>${escapeHtml(article.preview)}${article.preview.length === 190 ? ' …' : ''}</p>
-        <button type="button" data-article="${escapeHtml(article.slug)}">Artikel lesen <span aria-hidden="true">→</span></button>
+        <a href="artikel/${escapeHtml(article.slug)}/" data-article="${escapeHtml(article.slug)}">Artikel lesen <span aria-hidden="true">→</span></a>
       </div>
     </article>
   `).join('');
@@ -400,7 +405,10 @@ function closeArticle(updateHistory = true) {
 
 document.addEventListener('click', event => {
   const trigger = event.target.closest('[data-article]');
-  if (trigger) openArticle(trigger.dataset.article);
+  if (trigger) {
+    event.preventDefault();
+    openArticle(trigger.dataset.article);
+  }
 });
 document.querySelector('#closeArticle').addEventListener('click', () => closeArticle());
 document.querySelector('#randomArticle').addEventListener('click', () => {

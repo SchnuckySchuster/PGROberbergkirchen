@@ -67,6 +67,26 @@ Nach der Bestätigung werden alle Änderungen des Projekts gemeinsam veröffentl
 
 GitHub Actions baut und veröffentlicht die Website nach der Übertragung automatisch.
 
+### Suchmaschinen und eigene Domain
+
+Beim Erstellen des Veröffentlichungspakets werden automatisch erzeugt:
+
+- aussagekräftige Seitentitel und Beschreibungen,
+- Vorschauangaben für Suchmaschinen und soziale Netzwerke,
+- strukturierte Daten für den Pfarrgemeinderat und die Artikel,
+- eigenständige, von Suchmaschinen erreichbare HTML-Seiten für jeden Artikel,
+- `robots.txt` und `sitemap.xml`.
+
+Die gültige Website-Adresse steht zentral in `site.config.json`. Solange die neue Domain noch nicht erreichbar und in GitHub Pages eingerichtet ist, bleibt dort die bisherige GitHub-Pages-Adresse eingetragen.
+
+Sobald `https://pgr-oberbergkirchen.de/` vollständig funktioniert:
+
+1. In `site.config.json` den Wert `siteUrl` auf `https://pgr-oberbergkirchen.de/` ändern.
+2. `veroeffentlichen.command` ausführen.
+3. Die Sitemap `https://pgr-oberbergkirchen.de/sitemap.xml` in der Google Search Console einreichen.
+
+Die Datei `plannedDomain` dient nur als Merkhilfe und beeinflusst die veröffentlichte Seite nicht.
+
 ### Automatische Aktualisierung beim Commit
 
 Für dieses Projekt ist ein Git-`pre-commit`-Hook unter `.githooks/pre-commit` eingerichtet. Bei jedem Commit – auch aus VS Code – führt er automatisch die vorhandene Aktualisierung aus:

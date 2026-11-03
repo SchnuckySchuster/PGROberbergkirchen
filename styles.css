@@ -366,7 +366,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
 .article-card time, .reader-date { color: var(--blue); font-size: .78rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
 .article-card h3 { margin-top: 10px; font-size: 1.65rem; line-height: 1.15; }
 .article-card p { margin: 16px 0 22px; color: var(--muted); line-height: 1.6; }
-.article-card button {
+.article-card [data-article] {
   align-self: flex-start;
   margin-top: auto;
   padding: 0;
@@ -375,6 +375,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
   border: 0;
   font-weight: 850;
   cursor: pointer;
+  text-decoration: none;
 }
 .loading-message { color: var(--muted); }
 
@@ -399,6 +400,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
   border-radius: 999px;
   font-weight: 800;
   cursor: pointer;
+  text-decoration: none;
 }
 .reader-content { width: min(840px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 110px; }
 .reader-content > h1:first-of-type { margin: 10px 0 38px; font-size: clamp(2.7rem, 7vw, 5.4rem); }
@@ -437,7 +439,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
 }
 .article-index-status { min-height: 1.4em; margin: 0 0 18px; color: var(--muted); font-size: .9rem; }
 #articleIndex { display: grid; border-top: 1px solid var(--line); }
-#articleIndex button {
+#articleIndex [data-article] {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 18px;
@@ -448,6 +450,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
   border-bottom: 1px solid var(--line);
   text-align: left;
   cursor: pointer;
+  text-decoration: none;
 }
 #articleIndex .article-index-main { display: grid; gap: 7px; }
 #articleIndex strong { font-family: Georgia, serif; font-size: 1.2rem; }
@@ -573,7 +576,7 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.035em; }
   .reader-content { width: min(100% - 32px, 840px); padding-top: 48px; }
   .reader-content figure { margin: 38px 0; }
   .article-index-filters { grid-template-columns: 1fr; }
-  #articleIndex button { grid-template-columns: 1fr; gap: 8px; }
+  #articleIndex [data-article] { grid-template-columns: 1fr; gap: 8px; }
   .site-footer { grid-template-columns: 1fr; padding-block: 46px; }
   .site-footer > div:first-child { align-items: flex-start; flex-direction: column; }
   .footer-links { justify-content: flex-start; }

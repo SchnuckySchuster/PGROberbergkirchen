@@ -213,7 +213,16 @@ Das Datum bezeichnet das Veröffentlichungsdatum des Artikels. Titel und Datum w
 - Alle Artikel sind außerdem über einen vollständigen Artikelindex erreichbar. Dieser bietet eine Teiltextsuche im Artikeltitel und einen Monatsfilter, beispielsweise für alle Artikel aus September 2026.
 - Beim Öffnen füllt der Artikel die Inhaltsfläche der Seite aus; der Seitenkopf bleibt erhalten.
 - Die Artikelansicht besitzt eine gut sichtbare Zurück-Funktion.
-- Jeder Artikel erhält eine direkt aufrufbare Adresse über einen URL-Hash.
+- Jeder Artikel erhält eine direkt aufrufbare Adresse über einen URL-Hash für die Bedienung innerhalb der Startseite.
+- Beim Build wird zusätzlich für jeden Artikel eine eigenständige HTML-Seite erzeugt, damit Suchmaschinen ihn direkt finden und indexieren können.
+
+## Suchmaschinen und Domain
+
+- Die Seite wird für die geplante Domain `pgr-oberbergkirchen.de` vorbereitet.
+- Solange diese Domain nicht erreichbar und in GitHub Pages eingerichtet ist, bleibt die bestehende GitHub-Pages-Adresse die kanonische Website-Adresse.
+- Die jeweils gültige Adresse wird zentral in `site.config.json` gepflegt.
+- Seitentitel, Beschreibungen, Vorschauangaben, strukturierte Daten, `robots.txt` und `sitemap.xml` werden beim Build bereitgestellt.
+- Nach der Freischaltung der eigenen Domain wird `siteUrl` auf `https://pgr-oberbergkirchen.de/` umgestellt und neu veröffentlicht.
 
 ## Sichtbarkeit der Dateien
 

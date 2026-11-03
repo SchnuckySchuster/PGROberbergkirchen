@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#fffaf3">
   <meta name="description" content="Informationen aus dem Pfarrgemeinderat Oberbergkirchen">
   <title>Pfarrgemeinderat Oberbergkirchen</title>
-  <link rel="stylesheet" href="styles.css?v=2.1.1">
+  <link rel="stylesheet" href="styles.css?v=2.1.2">
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -113,6 +113,19 @@
     <div class="article-index-content">
       <p class="eyebrow">Übersicht</p>
       <h1 id="articleIndexTitle">Alle Artikel</h1>
+      <div class="article-index-filters">
+        <label for="articleSearch">
+          Artikel suchen
+          <input id="articleSearch" type="search" placeholder="z. B. Feuerwehr" autocomplete="off">
+        </label>
+        <label for="articleMonth">
+          Monat
+          <select id="articleMonth">
+            <option value="">Alle Monate</option>
+          </select>
+        </label>
+      </div>
+      <p id="articleIndexStatus" class="article-index-status" role="status" aria-live="polite"></p>
       <div id="articleIndex"></div>
     </div>
   </dialog>
@@ -120,6 +133,6 @@
     <button class="event-dialog-close" type="button" aria-label="Plakat schließen">×</button>
     <img id="eventDialogImage" src="" alt="">
   </dialog>
-  <script src="app.js?v=2.1.1"></script>
+  <script src="app.js?v=2.1.3"></script>
 </body>
 </html>

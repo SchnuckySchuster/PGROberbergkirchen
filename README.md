@@ -91,7 +91,7 @@ Jede Veranstaltung erhält einen eigenen Unterordner:
 ```text
 redaktioneller_inhalt/
 └── veranstaltungen/
-    └── VeranstaltungstitelInCamelCase__JJJJ-MM-TT/
+    └── VeranstaltungstitelInCamelCase-JJJJ-MM-TT/
         ├── Plakat.png
         ├── ErstesBild.jpeg
         ├── ZweitesBild.jpeg
@@ -101,15 +101,14 @@ redaktioneller_inhalt/
 Beispiel:
 
 ```text
-redaktioneller_inhalt/veranstaltungen/Adventskonzert__2026-12-06/
+redaktioneller_inhalt/veranstaltungen/Adventskonzert-2026-12-06/
 ```
 
 Regeln:
 
 - Der Ordnername enthält Titel und Datum der Veranstaltung.
 - Das Datum verwendet das Format `JJJJ-MM-TT`.
-- Die beiden Unterstriche `__` trennen Titel und Datum eindeutig.
-- Bestehende ältere Ordner mit einfachem Bindestrich vor dem Datum werden weiterhin erkannt.
+- Ein einfacher Bindestrich `-` trennt Titel und Datum.
 - `Plakat.jpg`, `Plakat.jpeg`, `Plakat.png` und `Plakat.webp` werden als Plakat erkannt.
 - Im Terminbereich werden ausschließlich solche Plakatdateien angezeigt. Ohne `Plakat` erscheint die Veranstaltung dort nicht; andere Bilder werden nicht als Ersatz verwendet.
 - Eine optionale `information.md` kann zusätzlichen Text enthalten.
@@ -131,13 +130,13 @@ redaktioneller_inhalt/bilder/
 Dateinamensmuster:
 
 ```text
-BildtitelInCamelCase__JJJJ-MM-TT.jpeg
+BildtitelInCamelCase-JJJJ-MM-TT.jpeg
 ```
 
 Beispiel:
 
 ```text
-KircheImSchnee__2026-01-15.jpeg
+KircheImSchnee-2026-01-15.jpeg
 ```
 
 Die Diashow mischt freie Bilder mit Bildern vergangener Veranstaltungen. Neuere Bilder werden bei der zufälligen Reihenfolge deutlich bevorzugt; ältere bleiben weiterhin im Fundus.
@@ -153,13 +152,13 @@ redaktioneller_inhalt/artikel/
 Dateinamensmuster:
 
 ```text
-ArtikeltitelInCamelCase__JJJJ-MM-TT.md
+ArtikeltitelInCamelCase-JJJJ-MM-TT.md
 ```
 
 Das Datum ist das Veröffentlichungsdatum. Beispiel:
 
 ```text
-SommerfestRueckblick__2026-08-04.md
+SommerfestRueckblick-2026-08-04.md
 ```
 
 Ein einfacher Artikel:
@@ -169,12 +168,14 @@ Ein einfacher Artikel:
 
 Bei schönem Wetter kamen viele Menschen rund um das Pfarrheim zusammen.
 
-![Gäste beim Sommerfest](../veranstaltungen/Sommerfest__2026-08-02/Gruppenbild.jpeg)
+![Gäste beim Sommerfest](../veranstaltungen/Sommerfest-2026-08-02/Gruppenbild.jpeg)
 
 Vielen Dank an alle Helferinnen und Helfer.
 ```
 
 Der erste normale Textabsatz wird automatisch als Vorschau verwendet. Das erste eingebettete Bild dient zugleich als Vorschaubild der Artikelkarte.
+
+Über „Alle Artikel“ öffnet sich das vollständige Artikelverzeichnis. Dort kann nach einem Teil des Artikeltitels gesucht und nach Veröffentlichungsmonat gefiltert werden.
 
 ## Regeln für Dateinamen
 
@@ -186,9 +187,9 @@ KircheImSchnee
 TagDerOffenenTuer
 ```
 
-Die Website trennt CamelCase bei der Anzeige automatisch in einzelne Wörter. Für besonders zuverlässige Dateinamen können Umlaute als `Ae`, `Oe`, `Ue` und `ss` geschrieben werden.
+Die Website trennt CamelCase bei der Anzeige automatisch in einzelne Wörter. Umlaute wie `Ä`, `Ö`, `Ü` und `ß` dürfen in Dateinamen verwendet werden.
 
-Keine doppelten Unterstriche innerhalb des eigentlichen Titels verwenden. Sie sind als Trennzeichen vor dem Datum reserviert.
+Titel und Datum werden immer durch einen einfachen Bindestrich getrennt.
 
 ## Logo
 

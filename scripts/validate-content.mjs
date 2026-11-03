@@ -9,8 +9,8 @@ const imageRoot = path.join(editorialRoot, 'bilder');
 const articleRoot = path.join(editorialRoot, 'artikel');
 const errors = [];
 const warnings = [];
-const datedNamePattern = /^(?<title>.+?)(?:__|-)(?<date>\d{4}-\d{2}-\d{2})$/;
-const articlePattern = /^(?<title>[A-Za-z0-9ÄÖÜäöüß]+)__(?<date>\d{4}-\d{2}-\d{2})\.md$/;
+const datedNamePattern = /^(?<title>.+)-(?<date>\d{4}-\d{2}-\d{2})$/;
+const articlePattern = /^(?<title>[A-Za-z0-9ÄÖÜäöüß]+)-(?<date>\d{4}-\d{2}-\d{2})\.md$/;
 const imagePattern = /\.(?:jpe?g|png|webp)$/i;
 const today = new Intl.DateTimeFormat('sv-SE', {
   year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Europe/Berlin'

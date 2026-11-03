@@ -36,18 +36,18 @@ Als Logo der Website wird ausschließlich die vorhandene Datei `redaktioneller_i
 ```text
 redaktioneller_inhalt/
 ├── veranstaltungen/
-│   ├── Sommerfest__2026-08-02/
+│   ├── Sommerfest-2026-08-02/
 │   │   ├── Plakat.jpeg
 │   │   ├── Gottesdienst.jpeg
 │   │   ├── KaffeeUndKuchen.jpeg
 │   │   └── bericht.md
-│   └── Adventskonzert__2026-12-06/
+│   └── Adventskonzert-2026-12-06/
 │       ├── Plakat.jpeg
 │       └── information.md
 └── bilder/
-    ├── Fronleichnamsaltar__2026-06-04.jpeg
-    ├── KircheImSchnee__2025-12-15.jpeg
-    └── Osterkerze__2026-04-05.jpeg
+    ├── Fronleichnamsaltar-2026-06-04.jpeg
+    ├── KircheImSchnee-2025-12-15.jpeg
+    └── Osterkerze-2026-04-05.jpeg
 ```
 
 ## Namensregeln
@@ -55,16 +55,16 @@ redaktioneller_inhalt/
 ### Veranstaltungsordner
 
 ```text
-VeranstaltungstitelInCamelCase__JJJJ-MM-TT
+VeranstaltungstitelInCamelCase-JJJJ-MM-TT
 ```
 
 Beispiel:
 
 ```text
-TagDerOffenenTuer__2026-09-20
+TagDerOffenenTuer-2026-09-20
 ```
 
-Der Teil vor `__` ist der Veranstaltungstitel. Das Datum hinter `__` wird für die zeitliche Einordnung und Sortierung verwendet.
+Der Teil vor dem letzten Bindestrich mit anschließendem Datum ist der Veranstaltungstitel. Das Datum wird für die zeitliche Einordnung und Sortierung verwendet. Als Trenner wird immer ein einfacher Bindestrich verwendet.
 
 ### Bilder innerhalb einer Veranstaltung
 
@@ -85,13 +85,13 @@ Das Veranstaltungsdatum wird aus dem Ordnernamen übernommen und muss nicht in j
 ### Freie Bilder ohne Veranstaltung
 
 ```text
-BildtitelInCamelCase__JJJJ-MM-TT.jpeg
+BildtitelInCamelCase-JJJJ-MM-TT.jpeg
 ```
 
 Beispiel:
 
 ```text
-KircheImSchnee__2025-12-15.jpeg
+KircheImSchnee-2025-12-15.jpeg
 ```
 
 ### Anzeige der Titel
@@ -102,7 +102,7 @@ CamelCase wird bei der Anzeige automatisch an den Wortgrenzen durch Leerzeichen 
 - `KaffeeUndKuchen` wird zu „Kaffee Und Kuchen“.
 - `TagDerOffenenTuer` wird zu „Tag Der Offenen Tuer“.
 
-Umlaute dürfen im angezeigten Text vorkommen. Für zuverlässige Dateinamen sollen sie als `Ae`, `Oe`, `Ue` und `ss` geschrieben werden. Eine spätere sprachliche Nachbearbeitung der automatisch erzeugten Titel ist nicht vorgesehen.
+Umlaute dürfen im angezeigten Text und in Dateinamen vorkommen. Eine spätere sprachliche Nachbearbeitung der automatisch erzeugten Titel ist nicht vorgesehen.
 
 Zulässige Bildformate werden bei der Umsetzung verbindlich festgelegt. Vorgesehen sind mindestens JPEG, PNG und WebP.
 
@@ -193,14 +193,14 @@ Artikel werden als eigenständige Markdown-Dateien abgelegt:
 ```text
 redaktioneller_inhalt/
 └── artikel/
-    ├── RenovierungDerKirche__2026-05-12.md
-    └── SommerfestRueckblick__2026-08-04.md
+    ├── RenovierungDerKirche-2026-05-12.md
+    └── SommerfestRueckblick-2026-08-04.md
 ```
 
 Für Artikelnamen gilt das Muster:
 
 ```text
-ArtikeltitelInCamelCase__JJJJ-MM-TT.md
+ArtikeltitelInCamelCase-JJJJ-MM-TT.md
 ```
 
 Das Datum bezeichnet das Veröffentlichungsdatum des Artikels. Titel und Datum werden aus dem Dateinamen gewonnen. Artikel dürfen Bilder aus den Veranstaltungs- und Bilderordnern einbetten.
@@ -210,7 +210,7 @@ Das Datum bezeichnet das Veröffentlichungsdatum des Artikels. Titel und Datum w
 - Die neuesten Artikel stehen zuerst.
 - Eine zusätzliche Funktion „Zufälligen Artikel entdecken“ bietet einen zufällig ausgewählten Artikel an.
 - Die Zufallsfunktion ergänzt die chronologische Übersicht und ersetzt sie nicht.
-- Alle Artikel sind außerdem über einen vollständigen Artikelindex erreichbar.
+- Alle Artikel sind außerdem über einen vollständigen Artikelindex erreichbar. Dieser bietet eine Teiltextsuche im Artikeltitel und einen Monatsfilter, beispielsweise für alle Artikel aus September 2026.
 - Beim Öffnen füllt der Artikel die Inhaltsfläche der Seite aus; der Seitenkopf bleibt erhalten.
 - Die Artikelansicht besitzt eine gut sichtbare Zurück-Funktion.
 - Jeder Artikel erhält eine direkt aufrufbare Adresse über einen URL-Hash.

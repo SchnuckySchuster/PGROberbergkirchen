@@ -3,12 +3,30 @@
     "title": "Ferienprogramm Kindertoepfern",
     "date": "2026-10-02",
     "slug": "ferienprogramm-kindertoepfern-2026-10-02",
-    "file": "redaktioneller_inhalt/artikel/FerienprogrammKindertoepfern__2026-10-02.md"
+    "file": "redaktioneller_inhalt/artikel/FerienprogrammKindertoepfern-2026-10-02.md"
   },
   {
-    "title": "Sommerfest Der Kirchengemeinde",
+    "title": "Pfarrhof Bei Nacht",
+    "date": "2026-09-15",
+    "slug": "pfarrhof-bei-nacht-2026-09-15",
+    "file": "redaktioneller_inhalt/artikel/PfarrhofBeiNacht-2026-09-15.md"
+  },
+  {
+    "title": "Sommerfest Der Gemeinde",
     "date": "2026-08-03",
-    "slug": "sommerfest-der-kirchengemeinde-2026-08-03",
-    "file": "redaktioneller_inhalt/artikel/SommerfestDerKirchengemeinde__2026-08-03.md"
+    "slug": "sommerfest-der-gemeinde-2026-08-03",
+    "file": "redaktioneller_inhalt/artikel/SommerfestDerGemeinde-2026-08-03.md"
+  },
+  {
+    "title": "Spende Für Die Feuerwehr",
+    "date": "2026-05-14",
+    "slug": "spende-fur-die-feuerwehr-2026-05-14",
+    "file": "redaktioneller_inhalt/artikel/SpendeFürDieFeuerwehr-2026-05-14.md"
+  },
+  {
+    "title": "Neuer Pfarrgemeinderat",
+    "date": "2026-03-22",
+    "slug": "neuer-pfarrgemeinderat-2026-03-22",
+    "file": "redaktioneller_inhalt/artikel/NeuerPfarrgemeinderat-2026-03-22.md"
   }
 ]

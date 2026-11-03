@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const articleDirectory = path.join(root, 'redaktioneller_inhalt', 'artikel');
 const outputFile = path.join(root, 'redaktioneller_inhalt', 'artikel.json');
-const pattern = /^(?<title>[A-Za-z0-9ÄÖÜäöüß]+)__(?<date>\d{4}-\d{2}-\d{2})\.md$/;
+const pattern = /^(?<title>[A-Za-z0-9ÄÖÜäöüß]+)-(?<date>\d{4}-\d{2}-\d{2})\.md$/;
 
 function separateCamelCase(value) {
   return value

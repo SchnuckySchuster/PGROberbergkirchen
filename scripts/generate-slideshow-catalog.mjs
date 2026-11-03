@@ -10,7 +10,7 @@ const outputFile = path.join(editorialRoot, 'slideshow.json');
 const optimizationManifest = JSON.parse(await readFile(
   path.join(editorialRoot, 'bildoptimierung.json'), 'utf8'));
 const imagePattern = /\.(?:jpe?g|png|webp)$/i;
-const datedNamePattern = /^(?<title>.+?)(?:__|-)(?<date>\d{4}-\d{2}-\d{2})$/;
+const datedNamePattern = /^(?<title>.+)-(?<date>\d{4}-\d{2}-\d{2})$/;
 
 function readableTitle(value) {
   return value

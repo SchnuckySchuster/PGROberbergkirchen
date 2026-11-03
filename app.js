@@ -297,14 +297,51 @@ const articleReader = document.querySelector('#articleReader');
 const articleContent = document.querySelector('#articleContent');
 const articleIndexDialog = document.querySelector('#articleIndexDialog');
 const articleIndex = document.querySelector('#articleIndex');
+const articleSearch = document.querySelector('#articleSearch');
+const articleMonth = document.querySelector('#articleMonth');
+const articleIndexStatus = document.querySelector('#articleIndexStatus');
+
+function normalizeArticleSearch(value) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('de-DE');
+}
+
+function formatMonth(value) {
+  return new Intl.DateTimeFormat('de-DE', {
+    month: 'long', year: 'numeric', timeZone: 'Europe/Berlin'
+  }).format(new Date(`${value}-01T12:00:00+01:00`));
+}
+
+function renderArticleIndex() {
+  const query = normalizeArticleSearch(articleSearch.value.trim());
+  const month = articleMonth.value;
+  const matches = articleState.articles.filter(article => {
+    const titleMatches = !query || normalizeArticleSearch(article.title).includes(query);
+    const monthMatches = !month || article.date.startsWith(month);
+    return titleMatches && monthMatches;
+  });
+
+  articleIndexStatus.textContent = matches.length === 1
+    ? '1 Artikel gefunden'
+    : `${matches.length} Artikel gefunden`;
+
+  articleIndex.innerHTML = matches.length ? matches.map(article => `
+    <button type="button" data-article="${escapeHtml(article.slug)}">
+      <span class="article-index-main">
+        <strong>${escapeHtml(article.title)}</strong>
+        <small>${escapeHtml(article.preview)}${article.preview.length === 190 ? ' …' : ''}</small>
+      </span>
+      <time datetime="${escapeHtml(article.date)}">${escapeHtml(formatDate(article.date))}</time>
+    </button>
+  `).join('') : '<p class="article-index-empty">Keine passenden Artikel gefunden.</p>';
+}
 
 async function loadArticles() {
-  const response = await fetch('redaktioneller_inhalt/artikel.json');
+  const response = await fetch('redaktioneller_inhalt/artikel.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('Der Artikelkatalog konnte nicht geladen werden.');
   const catalog = await response.json();
 
   articleState.articles = await Promise.all(catalog.map(async article => {
-    const markdownResponse = await fetch(article.file);
+    const markdownResponse = await fetch(article.file, { cache: 'no-store' });
     if (!markdownResponse.ok) throw new Error(`Artikel konnte nicht geladen werden: ${article.file}`);
     const markdown = await markdownResponse.text();
     return {
@@ -327,12 +364,11 @@ async function loadArticles() {
     </article>
   `).join('');
 
-  articleIndex.innerHTML = articleState.articles.map(article => `
-    <button type="button" data-article="${escapeHtml(article.slug)}">
-      <span>${escapeHtml(article.title)}</span>
-      <time datetime="${escapeHtml(article.date)}">${escapeHtml(formatDate(article.date))}</time>
-    </button>
-  `).join('');
+  const months = [...new Set(articleState.articles.map(article => article.date.slice(0, 7)))];
+  articleMonth.innerHTML = '<option value="">Alle Monate</option>' + months.map(month =>
+    `<option value="${escapeHtml(month)}">${escapeHtml(formatMonth(month))}</option>`
+  ).join('');
+  renderArticleIndex();
 
   const requestedSlug = decodeURIComponent(window.location.hash.replace(/^#artikel\//, ''));
   if (window.location.hash.startsWith('#artikel/') && requestedSlug) openArticle(requestedSlug, false);
@@ -371,7 +407,12 @@ document.querySelector('#randomArticle').addEventListener('click', () => {
   if (!articleState.articles.length) return;
   openArticle(articleState.articles[Math.floor(Math.random() * articleState.articles.length)].slug);
 });
-document.querySelector('#openArticleIndex').addEventListener('click', () => articleIndexDialog.showModal());
+document.querySelector('#openArticleIndex').addEventListener('click', () => {
+  articleIndexDialog.showModal();
+  articleSearch.focus();
+});
+articleSearch.addEventListener('input', renderArticleIndex);
+articleMonth.addEventListener('change', renderArticleIndex);
 document.querySelector('.article-index-close').addEventListener('click', () => articleIndexDialog.close());
 articleIndexDialog.addEventListener('click', event => { if (event.target === articleIndexDialog) articleIndexDialog.close(); });
 window.addEventListener('popstate', () => {

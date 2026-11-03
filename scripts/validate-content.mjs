@@ -62,6 +62,10 @@ for (const file of await readdir(articleRoot, { withFileTypes: true })) {
   for (const imageMatch of markdown.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)) {
     const source = imageMatch[1];
     if (/^(?:https?:|data:|\/)/i.test(source)) continue;
+    if (source !== source.normalize('NFC')) {
+      errors.push(`Bildpfad mit abweichender Umlaut-Codierung in ${file.name}: ${source}`);
+      continue;
+    }
     const imageFile = path.resolve(path.dirname(articleFile), source);
     if (!await exists(imageFile)) errors.push(`Fehlendes Artikelbild in ${file.name}: ${source}`);
   }

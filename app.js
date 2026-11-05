@@ -49,7 +49,7 @@ function weightedImageOrder(images) {
     });
     const total = weighted.reduce((sum, entry) => sum + entry.weight, 0);
     let draw = Math.random() * total;
-    let selected = weighted.at(-1).image;
+    let selected = weighted[weighted.length - 1].image;
     for (const entry of weighted) {
       draw -= entry.weight;
       if (draw <= 0) { selected = entry.image; break; }
@@ -83,7 +83,7 @@ function changeSlide(step) {
 function alignSlideCaption(slide) {
   const image = slide.querySelector('img');
   const caption = slide.querySelector('.slide-caption');
-  if (!image?.naturalWidth || !image?.naturalHeight || !caption) return;
+  if (!image || !image.naturalWidth || !image.naturalHeight || !caption) return;
 
   const availableWidth = slide.clientWidth;
   const availableHeight = slide.clientHeight;
@@ -128,7 +128,8 @@ async function loadSlideshow() {
   });
 }
 
-new ResizeObserver(alignSlideCaptions).observe(slideshow);
+window.addEventListener('resize', alignSlideCaptions, { passive: true });
+window.addEventListener('orientationchange', alignSlideCaptions, { passive: true });
 
 slideshowTrack.addEventListener('touchstart', event => {
   slideshowState.touchStartX = event.touches[0].clientX;

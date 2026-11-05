@@ -118,6 +118,7 @@ main { overflow: hidden; }
   justify-content: center;
   transform: translateX(-50%);
   color: var(--ink);
+  background: rgba(255, 250, 243, 0.88);
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   border-radius: 6px;
   font-size: 0.72rem;

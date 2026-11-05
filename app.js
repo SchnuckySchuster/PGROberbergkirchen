@@ -27,6 +27,7 @@ const slideshowState = {
   pauseUntil: 0,
   touchStartX: null
 };
+let slideshowLoadPromise = null;
 
 function berlinToday() {
   return new Intl.DateTimeFormat('sv-SE', {
@@ -104,7 +105,7 @@ function alignSlideCaptions() {
 }
 
 async function loadSlideshow() {
-  const response = await fetch('redaktioneller_inhalt/slideshow.json');
+  const response = await fetch('redaktioneller_inhalt/slideshow.json', { cache: 'no-cache' });
   if (!response.ok) throw new Error('Der Bilderkatalog konnte nicht geladen werden.');
   const today = berlinToday();
   const catalog = (await response.json()).filter(image => image.date <= today);
@@ -128,6 +129,25 @@ async function loadSlideshow() {
   });
 }
 
+function ensureSlideshow() {
+  if (slideshowState.images.length) {
+    slideshow.hidden = false;
+    showSlide(slideshowState.index);
+    requestAnimationFrame(alignSlideCaptions);
+    return slideshowLoadPromise || Promise.resolve();
+  }
+
+  if (!slideshowLoadPromise) {
+    slideshowLoadPromise = loadSlideshow()
+      .catch(error => {
+        console.error(error);
+        slideshow.hidden = true;
+      })
+      .finally(() => { slideshowLoadPromise = null; });
+  }
+  return slideshowLoadPromise;
+}
+
 window.addEventListener('resize', alignSlideCaptions, { passive: true });
 window.addEventListener('orientationchange', alignSlideCaptions, { passive: true });
 
@@ -146,9 +166,11 @@ setInterval(() => {
   }
 }, 6500);
 
-loadSlideshow().catch(error => {
-  console.error(error);
-  slideshow.hidden = true;
+ensureSlideshow();
+window.addEventListener('pageshow', ensureSlideshow);
+window.addEventListener('load', ensureSlideshow);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) ensureSlideshow();
 });
 
 function escapeHtml(value = '') {

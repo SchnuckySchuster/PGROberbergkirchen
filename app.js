@@ -95,6 +95,7 @@ async function loadSlideshow() {
   slideshowTrack.innerHTML = slideshowState.images.map((image, index) => `
     <div class="slide${index === 0 ? ' active' : ''}" aria-hidden="${index === 0 ? 'false' : 'true'}">
       <img src="${escapeHtml(image.image)}" alt="${escapeHtml(image.title)}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
+      <p class="slide-caption"><time datetime="${escapeHtml(image.date)}">${formatDate(image.date)}</time><span>${escapeHtml(image.caption || image.title)}</span></p>
     </div>
   `).join('');
 }

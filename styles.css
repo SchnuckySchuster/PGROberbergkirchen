@@ -103,6 +103,33 @@ main { overflow: hidden; }
   object-fit: contain;
   object-position: center;
 }
+
+.slide-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  z-index: 1;
+  display: flex;
+  max-width: min(78%, 560px);
+  margin: 0;
+  padding: 5px 8px;
+  gap: 5px 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  transform: translateX(-50%);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  text-align: center;
+  box-shadow: 0 1px 5px rgba(52, 38, 29, 0.12);
+}
+
+.slide-caption time {
+  font-weight: 700;
+  white-space: nowrap;
+}
 .hero {
   position: relative;
   width: min(900px, calc(100% - 40px));

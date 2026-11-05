@@ -168,7 +168,7 @@ Diese Bilder werden gemeinsam mit den Bildern vergangener Veranstaltungen in der
 
 ## Diashow
 
-Die Diashow steht nach dem einleitenden Seitenbereich und unmittelbar vor den Terminen. Sie vermittelt einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext oder Bildunterschriften aus. Die Bilder füllen nicht die gesamte Seitenbreite. Ein schmaler farbiger Rand bindet die Diashow sichtbar in das Seitendesign ein. Beim Zuschneiden wird der obere Bildbereich bevorzugt, damit insbesondere Köpfe sichtbar bleiben. Navigationselemente und notwendige barrierefreie Beschriftungen bleiben möglich, sollen sich optisch aber zurückhalten.
+Die Diashow steht nach dem einleitenden Seitenbereich und unmittelbar vor den Terminen. Der sichtbare Abstand zum Einleitungsbereich beträgt ungefähr 26 Pixel beziehungsweise rund 0,7 cm. Sie vermittelt einen lebendigen Eindruck und kommt vollständig ohne sichtbare Überschrift, Einführungstext, Bildunterschriften oder Rahmen aus. Die Bilder füllen nicht die gesamte Seitenbreite und werden vollständig mit unverändertem Seitenverhältnis dargestellt. Je nach Bildformat dürfen dabei freie Flächen entstehen; diese verwenden dieselbe helle Hintergrundfarbe wie die Seite und sind deshalb nicht als eigener Darstellungsbereich sichtbar. Wichtige Bildbereiche werden nicht abgeschnitten. Auf sichtbare Schaltflächen zum Vor- und Zurückspringen oder Anhalten wird verzichtet.
 
 Die Diashow wird automatisch aus zwei Quellen zusammengestellt:
 

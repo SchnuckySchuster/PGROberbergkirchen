@@ -19,14 +19,11 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 
 const slideshow = document.querySelector('.slideshow');
 const slideshowTrack = document.querySelector('#slideshowTrack');
-const previousSlideButton = document.querySelector('#previousSlide');
-const nextSlideButton = document.querySelector('#nextSlide');
-const toggleSlideshowButton = document.querySelector('#toggleSlideshow');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const slideshowState = {
   images: [],
   index: 0,
-  manuallyPaused: reducedMotion.matches,
+  paused: reducedMotion.matches,
   pauseUntil: 0,
   touchStartX: null
 };
@@ -83,13 +80,6 @@ function changeSlide(step) {
   showSlide(slideshowState.index + step);
 }
 
-function updatePauseButton() {
-  const paused = slideshowState.manuallyPaused;
-  toggleSlideshowButton.setAttribute('aria-pressed', String(paused));
-  toggleSlideshowButton.setAttribute('aria-label', paused ? 'Diashow fortsetzen' : 'Diashow anhalten');
-  toggleSlideshowButton.querySelector('[aria-hidden]').textContent = paused ? '▶' : 'Ⅱ';
-}
-
 async function loadSlideshow() {
   const response = await fetch('redaktioneller_inhalt/slideshow.json');
   if (!response.ok) throw new Error('Der Bilderkatalog konnte nicht geladen werden.');
@@ -107,17 +97,8 @@ async function loadSlideshow() {
       <img src="${escapeHtml(image.image)}" alt="${escapeHtml(image.title)}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
     </div>
   `).join('');
-  slideshow.classList.toggle('single-slide', slideshowState.images.length === 1);
-  updatePauseButton();
 }
 
-previousSlideButton.addEventListener('click', () => changeSlide(-1));
-nextSlideButton.addEventListener('click', () => changeSlide(1));
-toggleSlideshowButton.addEventListener('click', () => {
-  slideshowState.manuallyPaused = !slideshowState.manuallyPaused;
-  slideshowState.pauseUntil = 0;
-  updatePauseButton();
-});
 slideshowTrack.addEventListener('touchstart', event => {
   slideshowState.touchStartX = event.touches[0].clientX;
 }, { passive: true });
@@ -128,7 +109,7 @@ slideshowTrack.addEventListener('touchend', event => {
   slideshowState.touchStartX = null;
 }, { passive: true });
 setInterval(() => {
-  if (!slideshowState.manuallyPaused && Date.now() >= slideshowState.pauseUntil && !document.hidden) {
+  if (!slideshowState.paused && Date.now() >= slideshowState.pauseUntil && !document.hidden) {
     showSlide(slideshowState.index + 1);
   }
 }, 6500);

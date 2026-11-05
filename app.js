@@ -80,6 +80,29 @@ function changeSlide(step) {
   showSlide(slideshowState.index + step);
 }
 
+function alignSlideCaption(slide) {
+  const image = slide.querySelector('img');
+  const caption = slide.querySelector('.slide-caption');
+  if (!image?.naturalWidth || !image?.naturalHeight || !caption) return;
+
+  const availableWidth = slide.clientWidth;
+  const availableHeight = slide.clientHeight;
+  const scale = Math.min(
+    availableWidth / image.naturalWidth,
+    availableHeight / image.naturalHeight
+  );
+  const renderedWidth = image.naturalWidth * scale;
+  const renderedHeight = image.naturalHeight * scale;
+  const lowerFreeSpace = (availableHeight - renderedHeight) / 2;
+
+  caption.style.bottom = `${Math.round(lowerFreeSpace + 5)}px`;
+  caption.style.maxWidth = `${Math.max(0, Math.round(renderedWidth - 20))}px`;
+}
+
+function alignSlideCaptions() {
+  slideshowTrack.querySelectorAll('.slide').forEach(alignSlideCaption);
+}
+
 async function loadSlideshow() {
   const response = await fetch('redaktioneller_inhalt/slideshow.json');
   if (!response.ok) throw new Error('Der Bilderkatalog konnte nicht geladen werden.');
@@ -98,7 +121,14 @@ async function loadSlideshow() {
       <p class="slide-caption"><time datetime="${escapeHtml(image.date)}">${formatDate(image.date)}</time><span>${escapeHtml(image.caption || image.title)}</span></p>
     </div>
   `).join('');
+
+  slideshowTrack.querySelectorAll('.slide img').forEach(image => {
+    image.addEventListener('load', () => alignSlideCaption(image.closest('.slide')));
+    if (image.complete) alignSlideCaption(image.closest('.slide'));
+  });
 }
+
+new ResizeObserver(alignSlideCaptions).observe(slideshow);
 
 slideshowTrack.addEventListener('touchstart', event => {
   slideshowState.touchStartX = event.touches[0].clientX;

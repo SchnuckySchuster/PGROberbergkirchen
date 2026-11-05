@@ -2,7 +2,7 @@
 
 set -u
 
-projekt_ordner="${0:A:h}"
+projekt_ordner="${0:A:h:h}"
 cd "$projekt_ordner" || exit 1
 
 echo "PGR-Infoseite wird aktualisiert …"

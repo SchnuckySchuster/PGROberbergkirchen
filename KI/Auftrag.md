@@ -120,7 +120,7 @@ Der Katalog enthält:
 
 Der Katalog wird nicht von Hand gepflegt. Bei GitHub Pages soll seine Erzeugung Teil des Veröffentlichungsprozesses sein.
 
-Für die einfache manuelle Aktualisierung liegt `aktualisieren.command` im Projektwurzelverzeichnis. Die Datei startet per Doppelklick auf dem Mac die Erzeugung aller Kataloge.
+Für die einfache manuelle Aktualisierung liegt `aktualisieren.command` im Ordner `werkzeuge`. Die Datei startet per Doppelklick auf dem Mac die Erzeugung aller Kataloge.
 
 Die Aktualisierung umfasst außerdem:
 
@@ -130,7 +130,7 @@ Die Aktualisierung umfasst außerdem:
 - verständliche Hinweise und Fehlermeldungen
 - optionale lokale Vorschau im Browser
 
-`veroeffentlichen.command` aktualisiert und prüft die Inhalte, zeigt die Git-Änderungen, fragt vor der Übertragung nach und überträgt anschließend einen Commit zu GitHub. GitHub Actions erstellt daraus automatisch das optimierte Veröffentlichungspaket und veröffentlicht es über GitHub Pages.
+`werkzeuge/veroeffentlichen.command` aktualisiert und prüft die Inhalte, zeigt die Git-Änderungen, fragt vor der Übertragung nach und überträgt anschließend einen Commit zu GitHub. GitHub Actions erstellt daraus automatisch das optimierte Veröffentlichungspaket und veröffentlicht es über GitHub Pages.
 
 Zusätzlich führt der nur für dieses Repository aktivierte Git-`pre-commit`-Hook `.githooks/pre-commit` bei jedem Commit automatisch die Bildoptimierung, Katalogerzeugung und Inhaltsprüfung aus. Er nimmt aktualisierte Katalogdateien in den Commit auf; die Originalbilder bleiben unverändert.
 

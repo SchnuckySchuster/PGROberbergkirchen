@@ -18,16 +18,16 @@ Für die lokale Vorschau wird in den folgenden Beispielen Python 3 verwendet. Au
 
 Nach dem Hinzufügen, Umbenennen oder Löschen von Veranstaltungen, Bildern oder Artikeln:
 
-1. Im Projektordner auf `aktualisieren.command` doppelklicken.
+1. Den Ordner `werkzeuge` öffnen und auf `aktualisieren.command` doppelklicken.
 2. Warten, bis „Aktualisierung erfolgreich abgeschlossen“ erscheint.
 3. Zum Schließen des Fensters die Eingabetaste drücken.
 
-Beim ersten Start kann macOS die Datei aus Sicherheitsgründen blockieren. Dann `aktualisieren.command` mit der rechten Maustaste anklicken, `Öffnen` wählen und den Start bestätigen.
+Beim ersten Start kann macOS die Datei aus Sicherheitsgründen blockieren. Dann `werkzeuge/aktualisieren.command` mit der rechten Maustaste anklicken, `Öffnen` wählen und den Start bestätigen.
 
 Alternativ kann die Aktualisierung im Terminal gestartet werden:
 
 ```bash
-./aktualisieren.command
+./werkzeuge/aktualisieren.command
 ```
 
 Für eine Ausführung ohne Rückfrage am Ende steht weiterhin der direkte Befehl zur Verfügung:
@@ -50,11 +50,11 @@ Diese drei JSON-Dateien nicht von Hand bearbeiten.
 
 Das Skript muss nicht allein deshalb erneut laufen, weil ein Termin abgelaufen ist. Die Website vergleicht die gespeicherten Daten beim Öffnen selbst mit dem aktuellen Datum. Es muss nur nach einer Änderung an den Quelldateien ausgeführt werden.
 
-Am Ende fragt `aktualisieren.command`, ob die lokale Vorschau im Browser geöffnet werden soll. Falls nötig, wird dafür automatisch ein lokaler Webserver auf Port 8000 gestartet.
+Am Ende fragt `werkzeuge/aktualisieren.command`, ob die lokale Vorschau im Browser geöffnet werden soll. Falls nötig, wird dafür automatisch ein lokaler Webserver auf Port 8000 gestartet.
 
 ## Website veröffentlichen
 
-Im Projektordner auf `veroeffentlichen.command` doppelklicken. Die Datei:
+Im Projektordner den Ordner `werkzeuge` öffnen und auf `veroeffentlichen.command` doppelklicken. Die Datei:
 
 1. optimiert die Bilder,
 2. erzeugt alle Kataloge,
@@ -82,7 +82,7 @@ Die gültige Website-Adresse steht zentral in `site.config.json`. Solange die ne
 Sobald `https://pgr-oberbergkirchen.de/` vollständig funktioniert:
 
 1. In `site.config.json` den Wert `siteUrl` auf `https://pgr-oberbergkirchen.de/` ändern.
-2. `veroeffentlichen.command` ausführen.
+2. `werkzeuge/veroeffentlichen.command` ausführen.
 3. Die Sitemap `https://pgr-oberbergkirchen.de/sitemap.xml` in der Google Search Console einreichen.
 
 Die Datei `plannedDomain` dient nur als Merkhilfe und beeinflusst die veröffentlichte Seite nicht.
@@ -241,7 +241,7 @@ http://localhost:8000
 
 Der Server wird im Terminal mit `Ctrl+C` beendet.
 
-Einfacher ist die Frage „Lokale Vorschau im Browser öffnen?“ am Ende von `aktualisieren.command` mit `j` zu beantworten.
+Einfacher ist die Frage „Lokale Vorschau im Browser öffnen?“ am Ende von `werkzeuge/aktualisieren.command` mit `j` zu beantworten.
 
 ## GitHub Pages einmalig einrichten
 
@@ -254,7 +254,7 @@ Einmalig auf GitHub:
 3. Unter `Build and deployment` als Quelle `GitHub Actions` auswählen.
 4. Eine Übertragung auf den Branch `main` startet anschließend automatisch die Veröffentlichung.
 
-Für spätere Veröffentlichungen genügt der Doppelklick auf `veroeffentlichen.command`.
+Für spätere Veröffentlichungen genügt der Doppelklick auf `werkzeuge/veroeffentlichen.command`.
 
 ## Bildoptimierung
 
@@ -273,8 +273,8 @@ Alle über GitHub Pages veröffentlichten Bilder sind grundsätzlich öffentlich
 - `app.js` – Diashow, Termine, Artikel und Dialoge
 - `redaktioneller_inhalt/` – alle redaktionell gepflegten Inhalte
 - `scripts/` – Erzeugung der JSON-Kataloge
-- `aktualisieren.command` – Aktualisierung aller Kataloge per Doppelklick
-- `veroeffentlichen.command` – prüfen, speichern und zu GitHub übertragen
+- `werkzeuge/aktualisieren.command` – Aktualisierung aller Kataloge per Doppelklick
+- `werkzeuge/veroeffentlichen.command` – prüfen, speichern und zu GitHub übertragen
 - `.github/workflows/pages.yml` – automatische GitHub-Pages-Veröffentlichung
 - `package.json` – benötigte Node.js-Komponenten und Befehle
 - `KI/Auftrag.md` – verbindlicher Projektauftrag

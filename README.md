@@ -270,6 +270,7 @@ Alle über GitHub Pages veröffentlichten Bilder sind grundsätzlich öffentlich
 - `index.html` – Seitenstruktur
 - `styles.css` – Gestaltung und responsive Darstellung
 - `app.js` – Diashow, Termine, Artikel und Dialoge
+- `pfarrheim/` – lokaler, nicht veröffentlichter Entwurf für das Pfarrheim
 - `redaktioneller_inhalt/` – alle redaktionell gepflegten Inhalte
 - `scripts/` – Erzeugung der JSON-Kataloge
 - `werkzeuge/aktualisieren.command` – Aktualisierung aller Kataloge per Doppelklick

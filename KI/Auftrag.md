@@ -239,6 +239,20 @@ Da die Website öffentlich und statisch ausgeliefert wird, sind verwendete Bilde
 - Die Gottesdienstordnung wird weder parallel gepflegt noch separat verlinkt.
 - Inhalte wie amtliche Informationen, Sakramente, Seelsorge und Pfarrbüro bleiben beim offiziellen Angebot.
 
+## Lokaler Entwurf für das Pfarrheim
+
+Unter `pfarrheim/` liegt ein eigenständiger, für Handys geeigneter Singlepage-Entwurf zum Pfarrheim Oberbergkirchen. Er gehört inhaltlich nicht zum Pfarrgemeinderat und verwendet deshalb weder dessen Logo noch dessen warme Farbwelt. Der Pfarrheim-Entwurf besitzt eine neutrale Textmarke und eine kühlere Gestaltung in Blaugrün.
+
+Die Pfarrheim-Seite umfasst:
+
+- eine eigene automatische Diashow mit Aufnahmen aus dem Pfarrheim,
+- eine Vorstellung des großen Saals, des kleinen Saals und der Küche,
+- einen Bereich „Anleitungen & Informationen“,
+- eine Kurzanleitung und später die vollständige Bedienungsanleitung zur neuen Waschmaschine,
+- Platz für Ausstattung, Nutzungsregeln, Belegung und Ansprechpartner.
+
+Der Entwurf bleibt vorerst ausschließlich lokal. Er wird vom Veröffentlichungs-Build nicht nach `dist/` kopiert, nicht in die Sitemap aufgenommen und auf der PGR-Seite nicht verlinkt. Gerätespezifische Angaben zur Waschmaschine werden erst ergänzt, wenn Hersteller, Modell beziehungsweise die Originalanleitung vorliegen.
+
 ## Anbieterkennzeichnung
 
 Das Impressum nennt den privaten Anbieter mit vollständiger Postanschrift und E-Mail-Adresse. Wegen der veröffentlichten Artikel wird zusätzlich derselbe Anbieter als inhaltlich Verantwortlicher nach § 18 Abs. 2 MStV benannt. Das Impressum stellt klar, dass die Website kein offizieller Internetauftritt des Pfarrverbands Schönberg oder des Erzbistums München und Freising ist.

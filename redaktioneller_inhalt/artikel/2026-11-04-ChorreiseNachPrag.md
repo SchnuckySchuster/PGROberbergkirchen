@@ -6,6 +6,10 @@ Rund 300 Sängerinnen und Sänger sowie Musikerinnen und Musiker richteten sich 
 
 ![Sängerinnen, Sänger und Musiker bei der Chorprobe in der Mariä-Himmelfahrts-Kirche](../veranstaltungen/2026-11-04-Pragreise-Abordnung-Kirchenchöre/ChorprobeMariaHimmelfahrtskirche.jpg)
 
+Auch eine Abordnung des Chores unseres Pfarrverbandes nahm an der Reise teil.
+
+![Die Abordnung des Chores unseres Pfarrverbandes](../veranstaltungen/2026-11-04-Pragreise-Abordnung-Kirchenchöre/AbordnungDesChoresUnseresPfarrverbandes.jpg)
+
 Bei einer Stadtführung durch Prag gehörte auch das eindrucksvolle Kopfmodell Franz Kafkas zu den Stationen.
 
 ![Das Kopfmodell Franz Kafkas bei der Stadtführung in Prag](../veranstaltungen/2026-11-04-Pragreise-Abordnung-Kirchenchöre/FranzKafkaKopf.jpg)

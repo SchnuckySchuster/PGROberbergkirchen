@@ -41,12 +41,7 @@ echo
 echo "Folgende Änderungen werden veröffentlicht:"
 git status --short
 echo
-read "antwort?Jetzt zu GitHub übertragen? [j/N] "
-if [[ "$antwort" != [jJyY] ]]; then
-  echo "Veröffentlichung abgebrochen."
-  read "?Zum Schließen die Eingabetaste drücken …"
-  exit 0
-fi
+echo "Die Änderungen werden jetzt automatisch zu GitHub übertragen …"
 
 git add -A
 if git diff --cached --quiet; then

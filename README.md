@@ -60,10 +60,9 @@ Im Projektordner den Ordner `werkzeuge` öffnen und auf `veroeffentlichen.comman
 2. erzeugt alle Kataloge,
 3. prüft die Inhalte,
 4. zeigt die gefundenen Git-Änderungen,
-5. fragt vor der Übertragung noch einmal nach,
-6. erstellt einen Git-Commit und überträgt ihn zu GitHub.
+5. erstellt automatisch einen Git-Commit und überträgt ihn ohne weitere Rückfrage zu GitHub.
 
-Nach der Bestätigung werden alle Änderungen des Projekts gemeinsam veröffentlicht. Deshalb vor der Bestätigung kurz die angezeigte Dateiliste prüfen.
+Alle Änderungen des Projekts werden gemeinsam veröffentlicht. Der Ablauf wird nur bei einem Fehler oder dann beendet, wenn keine neuen Änderungen vorhanden sind.
 
 GitHub Actions baut und veröffentlicht die Website nach der Übertragung automatisch.
 

@@ -130,7 +130,7 @@ Die Aktualisierung umfasst außerdem:
 - verständliche Hinweise und Fehlermeldungen
 - optionale lokale Vorschau im Browser
 
-`werkzeuge/veroeffentlichen.command` aktualisiert und prüft die Inhalte, zeigt die Git-Änderungen, fragt vor der Übertragung nach und überträgt anschließend einen Commit zu GitHub. GitHub Actions erstellt daraus automatisch das optimierte Veröffentlichungspaket und veröffentlicht es über GitHub Pages.
+`werkzeuge/veroeffentlichen.command` aktualisiert und prüft die Inhalte, zeigt die Git-Änderungen und überträgt anschließend ohne Bestätigungsabfrage automatisch einen Commit zu GitHub. GitHub Actions erstellt daraus automatisch das optimierte Veröffentlichungspaket und veröffentlicht es über GitHub Pages.
 
 Zusätzlich führt der nur für dieses Repository aktivierte Git-`pre-commit`-Hook `.githooks/pre-commit` bei jedem Commit automatisch die Bildoptimierung, Katalogerzeugung und Inhaltsprüfung aus. Er nimmt aktualisierte Katalogdateien in den Commit auf; die Originalbilder bleiben unverändert.
 

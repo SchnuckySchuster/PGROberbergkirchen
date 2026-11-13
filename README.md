@@ -226,6 +226,8 @@ Die Datei nur ersetzen, wenn das neue Logo ebenfalls als PNG unter genau diesem 
 
 `index.html` nicht per Doppelklick öffnen, da der Browser die JSON- und Markdown-Dateien dann häufig nicht laden darf.
 
+Am einfachsten im Ordner `werkzeuge` auf `start_local_server.command` doppelklicken. Das Skript aktualisiert und baut die Seite, sucht automatisch einen freien Port ab 8000 und öffnet die Vorschau im Browser. Das geöffnete Terminalfenster bleibt während der Vorschau aktiv. Mit `Ctrl+C` oder durch Schließen des Fensters wird der Server beendet.
+
 Im Projektordner einen lokalen Server starten:
 
 ```bash
@@ -240,7 +242,7 @@ http://localhost:8000
 
 Der Server wird im Terminal mit `Ctrl+C` beendet.
 
-Einfacher ist die Frage „Lokale Vorschau im Browser öffnen?“ am Ende von `werkzeuge/aktualisieren.command` mit `j` zu beantworten.
+Alternativ kann die Frage „Lokale Vorschau im Browser öffnen?“ am Ende von `werkzeuge/aktualisieren.command` mit `j` beantwortet werden.
 
 ## GitHub Pages einmalig einrichten
 
@@ -274,6 +276,7 @@ Alle über GitHub Pages veröffentlichten Bilder sind grundsätzlich öffentlich
 - `redaktioneller_inhalt/` – alle redaktionell gepflegten Inhalte
 - `scripts/` – Erzeugung der JSON-Kataloge
 - `werkzeuge/aktualisieren.command` – Aktualisierung aller Kataloge per Doppelklick
+- `werkzeuge/start_local_server.command` – aktuelle lokale Vorschau erstellen und im Browser öffnen
 - `werkzeuge/veroeffentlichen.command` – prüfen, speichern und zu GitHub übertragen
 - `.github/workflows/pages.yml` – automatische GitHub-Pages-Veröffentlichung
 - `package.json` – benötigte Node.js-Komponenten und Befehle

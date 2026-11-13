@@ -122,6 +122,8 @@ Der Katalog wird nicht von Hand gepflegt. Bei GitHub Pages soll seine Erzeugung 
 
 Für die einfache manuelle Aktualisierung liegt `aktualisieren.command` im Ordner `werkzeuge`. Die Datei startet per Doppelklick auf dem Mac die Erzeugung aller Kataloge.
 
+`werkzeuge/start_local_server.command` aktualisiert und baut die Website, startet auf einem automatisch gewählten freien Port eine lokale Vorschau und öffnet sie im Browser. Der Server läuft bis zum Schließen des Terminalfensters beziehungsweise bis `Ctrl+C` gedrückt wird.
+
 Die Aktualisierung umfasst außerdem:
 
 - automatische WebP-Bildoptimierung mit maximal 1600 × 1600 Pixeln
